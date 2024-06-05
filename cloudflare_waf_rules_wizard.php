@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cloudflare WAF Custom Rules Wizard
 Description: A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
-Version: 1.3
+Version: 1.3.1
 Author: Rob Marlbrough - PressWizards.com
 Author URI:        https://presswizards.com/
 License:           GPL v3 or later
@@ -12,7 +12,11 @@ Requires PHP:      7.4
 */
 
 // Add a menu item for the plugin settings page
-add_action('admin_menu', 'pw_cloudflare_ruleset_manager_menu');
+if (!current_user_can('manage_options')) {
+    wp_die(__('You do not have sufficient permissions to access this page.'));
+} else {
+    add_action('admin_menu', 'pw_cloudflare_ruleset_manager_menu');
+}
 function pw_cloudflare_ruleset_manager_menu() {
     add_options_page(
         'Cloudflare WAF Rules Wizard',
@@ -25,10 +29,15 @@ function pw_cloudflare_ruleset_manager_menu() {
 
 // Display the plugin settings page
 function pw_cloudflare_ruleset_manager_options_page() {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You do not have sufficient permissions to access this page.'));
+    }
     ?>
     <div class="wrap">
         <h2>Cloudflare WAF Custom Rules Wizard</h2>
         <p>Created by Rob Marlbrough at <a target="_blank" href="https://presswizards.com/">Press Wizards - WordPress Design, Hosting, and Maintenance</a></p>
+
+        <?php settings_errors(); ?>
 
         <?php if(get_option('pw_cloudflare_account_id') && get_option('pw_cloudflare_api_key') && get_option('pw_cloudflare_api_email')) { ?>
                 <form method="post">
@@ -47,6 +56,8 @@ function pw_cloudflare_ruleset_manager_options_page() {
                                 </label><br>
                         <?php endforeach; ?>
                         <br/>
+                        // Add nonce field for security
+                        wp_nonce_field('pw_create_ruleset_action', 'pw_create_ruleset_nonce');
                         <input type="submit" class="button button-primary" name="pw_create_ruleset" value="Create/Overwrite All WAF Rules">
                 </form>
         <?php } ?>
@@ -55,6 +66,8 @@ function pw_cloudflare_ruleset_manager_options_page() {
                 <?php
                 settings_fields('pw_cloudflare_ruleset_manager_options');
                 do_settings_sections('pw_cloudflare-ruleset-manager');
+                // Add nonce field for security
+                wp_nonce_field('pw_update_settings_action', 'pw_update_settings_nonce');
                 submit_button('Save Settings');
                 ?>
         </form>
@@ -69,9 +82,9 @@ function pw_cloudflare_ruleset_manager_options_page() {
 // Register and define the plugin settings
 add_action('admin_init', 'pw_cloudflare_ruleset_manager_settings');
 function pw_cloudflare_ruleset_manager_settings() {
-    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_key');
-    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_email');
-    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_account_id');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_key', 'sanitize_text_field');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_email', 'sanitize_email');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_account_id', 'sanitize_text_field');
 
     add_settings_section('pw_cloudflare_ruleset_manager_main', 'Cloudflare API Settings', 'pw_cloudflare_ruleset_manager_section_text', 'pw_cloudflare-ruleset-manager');
 
@@ -142,12 +155,18 @@ function pw_get_cloudflare_zones($accountId, $apiKey, $apiEmail) {
 
 // Process the form when "Create Rules" button is clicked
 if (isset($_POST['pw_create_ruleset'])) {
-    add_action('admin_notices', 'pw_cloudflare_ruleset_manager_process_zones');
+    // Verify the nonce before proceeding with rule creation
+    if (isset($_POST['pw_create_ruleset_nonce']) && wp_verify_nonce($_POST['pw_create_ruleset_nonce'], 'pw_create_ruleset')) {
+        add_action('admin_notices', 'pw_cloudflare_ruleset_manager_process_zones');
+    }
 }
 
 function pw_cloudflare_ruleset_manager_process_zones() {
-    $apiKey = get_option('pw_cloudflare_api_key');
-    $email = get_option('pw_cloudflare_api_email');
+    // Verify the action nonce
+    check_admin_referer('pw_update_settings_action', 'pw_update_settings_nonce');
+
+    $apiKey = sanitize_text_field(get_option('pw_cloudflare_api_key'));
+    $email = sanitize_email(get_option('pw_cloudflare_api_email'));
     $zoneIds = isset($_POST['pw_zone_ids']) ? $_POST['pw_zone_ids'] : [];
 
     if (empty($apiKey) || empty($email) || empty($zoneIds)) {
