@@ -11,6 +11,7 @@ Requires at least: 5.2
 Requires PHP:      7.4
 */
 
+// Add a menu item for the plugin settings page
 add_action('init','pw_cloudflare_ruleset_manager_menu');
 function pw_cloudflare_ruleset_manager_menu() {
 if (current_user_can('manage_options')) {
