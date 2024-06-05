@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cloudflare WAF Custom Rules Wizard
 Description: A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
-Version: 1.3.4
+Version: 1.3.5
 Author: Rob Marlbrough - PressWizards.com
 Author URI:        https://presswizards.com/
 License:           GPL v3 or later
@@ -54,8 +54,8 @@ function pw_cloudflare_ruleset_manager_options_page() {
                                 </label><br>
                         <?php endforeach; ?>
                         <br/>
-                        // Add nonce field for security
-                        wp_nonce_field('pw_create_ruleset_action', 'pw_create_ruleset_nonce');
+                        <?php // Add nonce field for security
+                        wp_nonce_field('pw_create_ruleset_action', 'pw_create_ruleset_nonce'); ?>
                         <input type="submit" class="button button-primary" name="pw_create_ruleset" value="Create/Overwrite All WAF Rules">
                 </form>
         <?php } ?>
@@ -151,18 +151,16 @@ function pw_get_cloudflare_zones($accountId, $apiKey, $apiEmail) {
     }
 }
 
-// Process the form when "Create Rules" button is clicked
 if (isset($_POST['pw_create_ruleset'])) {
-    // Verify the nonce before proceeding with rule creation
-    if (isset($_POST['pw_create_ruleset_nonce']) && wp_verify_nonce($_POST['pw_create_ruleset_nonce'], 'pw_create_ruleset')) {
-        add_action('admin_notices', 'pw_cloudflare_ruleset_manager_process_zones');
-    }
+    // Process the form when "Create Rules" button is clicked
+    add_action('admin_init', 'pw_process_create_ruleset');
+}
+function pw_process_create_ruleset() {
+    check_admin_referer('pw_create_ruleset_action', 'pw_create_ruleset_nonce');
+    pw_cloudflare_ruleset_manager_process_zones();
 }
 
 function pw_cloudflare_ruleset_manager_process_zones() {
-    // Verify the action nonce
-    check_admin_referer('pw_update_settings_action', 'pw_update_settings_nonce');
-
     $apiKey = sanitize_text_field(get_option('pw_cloudflare_api_key'));
     $email = sanitize_email(get_option('pw_cloudflare_api_email'));
     $zoneIds = isset($_POST['pw_zone_ids']) ? $_POST['pw_zone_ids'] : [];
