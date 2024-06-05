@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cloudflare WAF Custom Rules Wizard
 Description: A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
-Version: 1.3.5
+Version: 1.3.6
 Author: Rob Marlbrough - PressWizards.com
 Author URI:        https://presswizards.com/
 License:           GPL v3 or later
@@ -34,8 +34,6 @@ function pw_cloudflare_ruleset_manager_options_page() {
     <div class="wrap">
         <h2>Cloudflare WAF Custom Rules Wizard</h2>
         <p>Created by Rob Marlbrough at <a target="_blank" href="https://presswizards.com/">Press Wizards - WordPress Design, Hosting, and Maintenance</a></p>
-
-        <?php settings_errors(); ?>
 
         <?php if(get_option('pw_cloudflare_account_id') && get_option('pw_cloudflare_api_key') && get_option('pw_cloudflare_api_email')) { ?>
                 <form method="post">
