@@ -132,21 +132,33 @@ function pw_makeCurlRequest($url, $method, $headers, $data = null) {
     return json_decode($response, true);
 }
 
-// Get the list of zones based on the account ID
+// Get the list of all zones based on the account ID
 function pw_get_cloudflare_zones($accountId, $apiKey, $apiEmail) {
-    $url = "https://api.cloudflare.com/client/v4/zones?account.id=$accountId";
-    $headers = [
-        "X-Auth-Email: $apiEmail",
-        "X-Auth-Key: $apiKey",
-        "Content-Type: application/json",
-    ];
-    $response = pw_makeCurlRequest($url, 'GET', $headers);
+    $allZones = []; // Array to hold all zones
+    $page = 1;
+    $per_page = 50; // The maximum items per page you can request from the Cloudflare API for this endpoint
 
-    if (isset($response['result'])) {
-        return $response['result'];
-    } else {
-        return [];
-    }
+    do {
+        $url = "https://api.cloudflare.com/client/v4/zones?account.id=$accountId&page=$page&per_page=$per_page";
+        $headers = [
+            "X-Auth-Email: $apiEmail",
+            "X-Auth-Key: $apiKey",
+            "Content-Type: application/json",
+        ];
+        $response = pw_makeCurlRequest($url, 'GET', $headers); 
+
+        if (isset($response['result'])) {
+            // Merge the retrieved zones into the allZones array
+            $allZones = array_merge($allZones, $response['result']);
+        }
+
+        // Check if there are more pages to fetch
+        $totalPages = isset($response['result_info']['total_pages']) ? (int) $response['result_info']['total_pages'] : 1;
+        $page++;
+
+    } while ($page <= $totalPages);
+
+    return $allZones;
 }
 
 if (isset($_POST['pw_create_ruleset'])) {
