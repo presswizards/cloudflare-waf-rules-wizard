@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cloudflare WAF Custom Rules Wizard
 Description: A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
-Version: 1.4
+Version: 1.5
 Author: Rob Marlbrough - PressWizards.com
 Author URI:        https://presswizards.com/
 License:           GPL v3 or later
