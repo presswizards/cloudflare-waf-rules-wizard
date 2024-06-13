@@ -68,6 +68,12 @@ function pw_cloudflare_ruleset_manager_options_page() {
                 ?>
         </form>
 
+        <form method="post" action="">
+            <input type="hidden" name="pw_delete_settings" value="1" />
+            <?php wp_nonce_field('pw_delete_settings_action', 'pw_delete_settings_nonce'); ?>
+            <input type="submit" class="button button-secondary" value="Delete Settings" />
+        </form>
+
                 <p>&nbsp;</p>
                 <p>Based on <a target="_blank" href="https://webagencyhero.com/cloudflare-waf-rules-v3/">Troy Glancy's superb Cloudflare WAF Rules v3</a></p>
 
@@ -89,12 +95,25 @@ function pw_cloudflare_ruleset_manager_settings() {
     add_settings_field('pw_cloudflare_account_id', 'Account ID', 'pw_cloudflare_ruleset_manager_field_account_id', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
 }
 
+add_action('admin_init', 'pw_handle_delete_settings');
+function pw_handle_delete_settings() {
+    if (isset($_POST['pw_delete_settings']) && check_admin_referer('pw_delete_settings_action', 'pw_delete_settings_nonce')) {
+        delete_option('pw_cloudflare_api_key');
+        delete_option('pw_cloudflare_api_email');
+        delete_option('pw_cloudflare_account_id');
+        
+        add_action('admin_notices', function() {
+            echo '<div class="notice notice-success is-dismissible"><p>Cloudflare WAF Rules Wizard settings have been deleted.</p></div>';
+        });
+    }
+}
+
 function pw_cloudflare_ruleset_manager_section_text() {
     echo '<p>Enter your Cloudflare API Key and Email address, and the Account ID.</p>';
     echo '<p>When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in.</p>';
     echo '<p><a href="https://webagencyhero.com/cloudflare-waf-rules-v3/" target="_blank">Dig into Troy\'s WAF Rules v3 - each rule explained in detail</a>. You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules.</p>';
     echo '<p><strong>NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!</strong></p>';
-    echo '<p>Security Tip: Empty and resave the API fields after you are done using this plugin. It is not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove.</p>';
+    echo '<p>Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove.</p>';
 }
 
 function pw_cloudflare_ruleset_manager_field_api_key() {
