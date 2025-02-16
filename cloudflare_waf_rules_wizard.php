@@ -151,6 +151,20 @@ function pw_makeCurlRequest($url, $method, $headers, $data = null) {
     return json_decode($response, true);
 }
 
+// Function to update Minimum TLS Version to 1.2
+function pw_update_tls_minimum_version($zoneId, $headers) {
+    $url = "https://api.cloudflare.com/client/v4/zones/{$zoneId}/settings/min_tls_version";
+    $data = ['value' => '1.2']; // Set to TLS 1.2
+
+    $response = pw_makeCurlRequest($url, 'PATCH', $headers, $data);
+
+    if (isset($response['success']) && $response['success']) {
+        return true; // TLS updated successfully
+    } else {
+        return isset($response['errors'][0]['message']) ? $response['errors'][0]['message'] : 'Unknown error';
+    }
+}
+
 // Get the list of all zones based on the account ID
 function pw_get_cloudflare_zones($accountId, $apiKey, $apiEmail) {
     $allZones = []; // Array to hold all zones
@@ -283,6 +297,15 @@ function pw_cloudflare_ruleset_manager_process_zones() {
                 break;
             }
         }
+
+            // Update Minimum TLS Version before updating WAF rules
+    $tlsUpdateResult = pw_update_tls_minimum_version($zoneId, $headers);
+
+    if ($tlsUpdateResult === true) {
+        echo '<div class="notice notice-success is-dismissible"><p>Successfully updated Minimum TLS Version for domain: ' . esc_html($zoneName) . '</p></div>';
+    } else {
+        echo '<div class="notice notice-error is-dismissible"><p>Failed to update Minimum TLS Version for domain: ' . esc_html($zoneName) . '. Error: ' . esc_html($tlsUpdateResult) . '</p></div>';
+    }
 
         $rulesetId = pw_getRulesetId($zoneId, $headers);
 
