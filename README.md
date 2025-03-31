@@ -34,5 +34,4 @@ After you are done adding your shiny new WAF Rules: ⚠️ **don't forget to cli
 
 ![cf-waf-wizard-delete-settings](https://github.com/zackpyle/cloudflare-waf-rules-wizard/assets/19413506/00a7ec48-c483-4017-a252-1adff80c600c)
 
-
-!(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXRlczkyaWxsYXlqMDlpOWw0cTN4ODZ1dTZnMzNhbHQzbHBnNnVzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/513lZvPf6khjIQFibF/giphy.gif)
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
