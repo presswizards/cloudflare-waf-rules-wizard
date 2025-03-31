@@ -99,6 +99,11 @@ function pw_cloudflare_ruleset_manager_options_page() {
             <input type="submit" class="button button-secondary" value="<?php _e('Delete Settings', 'cloudflare-waf-rules-wizard'); ?>" />
         </form>
 
+        <p>
+        <a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+        <?php _e('If this plugin saves you time, helps your clients, or helps you do better work, I\'d appreciate it.'); ?>
+        </p>
+
         <p>&nbsp;</p>
         <p><?php _e('Based on', 'cloudflare-waf-rules-wizard'); ?> <a target="_blank" href="https://webagencyhero.com/cloudflare-waf-rules-v3/"><?php _e('Troy Glancy\'s superb Cloudflare WAF Rules v3', 'cloudflare-waf-rules-wizard'); ?></a></p>
 
