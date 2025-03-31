@@ -35,6 +35,11 @@ function pw_cloudflare_ruleset_manager_options_page() {
         <h2>Cloudflare WAF Rules Wizard</h2>
         <p>Created by Rob Marlbrough at <a target="_blank" href="https://presswizards.com/">Press Wizards - WordPress Design, Hosting, and Maintenance</a></p>
 
+<p>
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
+</p>
+
         <?php if(get_option('pw_cloudflare_account_id') && get_option('pw_cloudflare_api_key') && get_option('pw_cloudflare_api_email')) { ?>
                 <form method="post">
                         <?php
@@ -73,6 +78,11 @@ function pw_cloudflare_ruleset_manager_options_page() {
             <?php wp_nonce_field('pw_delete_settings_action', 'pw_delete_settings_nonce'); ?>
             <input type="submit" class="button button-secondary" value="Delete Settings" />
         </form>
+
+<p>
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
+</p>
 
                 <p>&nbsp;</p>
                 <p>Based on <a target="_blank" href="https://webagencyhero.com/cloudflare-waf-rules-v3/">Troy Glancy's superb Cloudflare WAF Rules v3</a></p>
