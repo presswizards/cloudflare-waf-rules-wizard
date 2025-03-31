@@ -1,6 +1,9 @@
 # Cloudflare WAF Rules Wizard
 A simple plugin to create Cloudflare WAF custom rules using your Cloudflare API key. This plugin is based on the amazing work by Troy Glancy and his superb [Cloudflare WAF Rules](https://webagencyhero.com/cloudflare-waf-rules-v3/?utm=github-presswizards-cloudflare-waf-rules-wizard). Read through the WAF rules logic and details on his site.
 
+<p/>
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Summary
 This plugin can be installed on any WordPress site you own, and then use it to bulk create the rules to as many domains in your Cloudflare account, including delegated member accounts you have access to.
 
@@ -34,4 +37,5 @@ After you are done adding your shiny new WAF Rules: ⚠️ **don't forget to cli
 
 ![cf-waf-wizard-delete-settings](https://github.com/zackpyle/cloudflare-waf-rules-wizard/assets/19413506/00a7ec48-c483-4017-a252-1adff80c600c)
 
+<p/>
 <a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
