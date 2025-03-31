@@ -1,23 +1,33 @@
 <?php
 /*
-Plugin Name: Cloudflare WAF Rules Wizard
-Description: A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
-Version: 1.85
-Author: Rob Marlbrough - PressWizards.com
-Author URI:        https://presswizards.com/
-License:           GPL v3 or later
-License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+Plugin Name:    Cloudflare WAF Rules Wizard DEV BETA
+Description:    A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
+Version:        2.0
+Plugin URI:     https://github.com/presswizards/cloudflare-waf-rules-wizard/
+Text Domain:    cloudflare-waf-rules-wizard
+Domain Path:    /languages
+Author:         Rob Marlbrough - PressWizards.com
+Author URI:     https://presswizards.com/
+License:        GPL v3 or later
+License URI:    https://www.gnu.org/licenses/gpl-3.0.html
+
 Requires at least: 5.2
 Requires PHP:      7.4
 */
+
+// Load plugin text domain for translations
+add_action('plugins_loaded', 'pw_load_textdomain');
+function pw_load_textdomain() {
+    load_plugin_textdomain('cloudflare-waf-rules-wizard', false, dirname(plugin_basename(__FILE__)) . '/languages');
+}
 
 // Add a menu item for the plugin settings page
 add_action('admin_menu','pw_cloudflare_ruleset_manager_menu');
 function pw_cloudflare_ruleset_manager_menu() {
     if (current_user_can('manage_options')) {
         add_options_page(
-            'Cloudflare WAF Rules Wizard',
-            'CF Rules Wizard',
+            __('Cloudflare WAF Rules Wizard', 'cloudflare-waf-rules-wizard'),
+            __('CF Rules Wizard', 'cloudflare-waf-rules-wizard'),
             'manage_options',
             'pw_cloudflare-ruleset-manager',
             'pw_cloudflare_ruleset_manager_options_page'
@@ -28,12 +38,17 @@ function pw_cloudflare_ruleset_manager_menu() {
 // Display the plugin settings page
 function pw_cloudflare_ruleset_manager_options_page() {
     if (!current_user_can('manage_options')) {
-        wp_die(__('You do not have sufficient permissions to access this page.'));
+        wp_die(__('You do not have sufficient permissions to access this page.', 'cloudflare-waf-rules-wizard'));
     }
     ?>
     <div class="wrap">
-        <h2>Cloudflare WAF Rules Wizard</h2>
-        <p>Created by Rob Marlbrough at <a target="_blank" href="https://presswizards.com/">Press Wizards - WordPress Design, Hosting, and Maintenance</a></p>
+        <h2><?php _e('Cloudflare WAF Rules Wizard', 'cloudflare-waf-rules-wizard'); ?></h2>
+        <p><?php _e('Created by Rob Marlbrough at', 'cloudflare-waf-rules-wizard'); ?> <a target="_blank" href="https://presswizards.com/"><?php _e('Press Wizards - WordPress Design, Hosting, and Maintenance', 'cloudflare-waf-rules-wizard'); ?></a></p>
+
+        <p>
+        <a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+        <?php _e('If this plugin saves you time, helps your clients, or helps you do better work, I\'d appreciate it.'); ?>
+        </p>
 
         <?php if(get_option('pw_cloudflare_account_id') && get_option('pw_cloudflare_api_key') && get_option('pw_cloudflare_api_email')) { ?>
                 <form method="post">
@@ -44,18 +59,28 @@ function pw_cloudflare_ruleset_manager_options_page() {
                                 get_option('pw_cloudflare_api_email')
                         );
                         ?>
-                        <h3>Select Domains to Reset WAF Custom Rules on:</h3>
+                        <h3><?php _e('Now, select Domains to Reset WAF Custom Rules on:', 'cloudflare-waf-rules-wizard'); ?></h3>
+                        <label>
+                            <input type="checkbox" id="select-all-domains">
+                            <strong><?php _e('Select All', 'cloudflare-waf-rules-wizard'); ?></strong>
+                        </label><br>
                         <?php foreach ($zones as $zone): ?>
                                 <label>
-                                        <input type="checkbox" name="pw_zone_ids[]" value="<?php echo esc_attr($zone['id']); ?>">
-                                        <?php echo esc_html($zone['name']); ?> <?php // echo esc_html($zone['id']); ?>
+                                        <input type="checkbox" name="pw_zone_ids[]" value="<?php echo esc_attr($zone['id']); ?>" class="domain-checkbox">
+                                        <?php echo esc_html($zone['name']); ?>
                                 </label><br>
                         <?php endforeach; ?>
                         <br/>
                         <?php // Add nonce field for security
                         wp_nonce_field('pw_create_ruleset_action', 'pw_create_ruleset_nonce'); ?>
-                        <input type="submit" class="button button-primary" name="pw_create_ruleset" value="Create/Overwrite All WAF Rules">
+                        <input type="submit" class="button button-primary" name="pw_create_ruleset" value="<?php _e('Create/Overwrite All WAF Rules', 'cloudflare-waf-rules-wizard'); ?>">
                 </form>
+                <script>
+                    document.getElementById('select-all-domains').addEventListener('change', function(e) {
+                        const checkboxes = document.querySelectorAll('.domain-checkbox');
+                        checkboxes.forEach(checkbox => checkbox.checked = e.target.checked);
+                    });
+                </script>
         <?php } ?>
                 <p>&nbsp;</p>
         <form method="post" action="options.php">
@@ -64,18 +89,23 @@ function pw_cloudflare_ruleset_manager_options_page() {
                 do_settings_sections('pw_cloudflare-ruleset-manager');
                 // Add nonce field for security
                 wp_nonce_field('pw_update_settings_action', 'pw_update_settings_nonce');
-                submit_button('Save Settings');
+                submit_button(__('Save Settings', 'cloudflare-waf-rules-wizard'));
                 ?>
         </form>
 
         <form method="post" action="">
             <input type="hidden" name="pw_delete_settings" value="1" />
             <?php wp_nonce_field('pw_delete_settings_action', 'pw_delete_settings_nonce'); ?>
-            <input type="submit" class="button button-secondary" value="Delete Settings" />
+            <input type="submit" class="button button-secondary" value="<?php _e('Delete Settings', 'cloudflare-waf-rules-wizard'); ?>" />
         </form>
 
-                <p>&nbsp;</p>
-                <p>Based on <a target="_blank" href="https://webagencyhero.com/cloudflare-waf-rules-v3/">Troy Glancy's superb Cloudflare WAF Rules v3</a></p>
+        <p>
+        <a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+        <?php _e('If this plugin saves you time, helps your clients, or helps you do better work, I\'d appreciate it.'); ?>
+        </p>
+
+        <p>&nbsp;</p>
+        <p><?php _e('Based on', 'cloudflare-waf-rules-wizard'); ?> <a target="_blank" href="https://webagencyhero.com/cloudflare-waf-rules-v3/"><?php _e('Troy Glancy\'s superb Cloudflare WAF Rules v3', 'cloudflare-waf-rules-wizard'); ?></a></p>
 
     </div>
     <?php
@@ -87,12 +117,17 @@ function pw_cloudflare_ruleset_manager_settings() {
     register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_key', 'sanitize_text_field');
     register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_api_email', 'sanitize_email');
     register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_account_id', 'sanitize_text_field');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_user_agents', 'pw_sanitize_user_agents');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_custom_user_agents', 'pw_sanitize_custom_user_agents');
+    register_setting('pw_cloudflare_ruleset_manager_options', 'pw_cloudflare_custom_allowed_ips', 'pw_sanitize_custom_allowed_ips');
 
     add_settings_section('pw_cloudflare_ruleset_manager_main', 'Cloudflare API Settings', 'pw_cloudflare_ruleset_manager_section_text', 'pw_cloudflare-ruleset-manager');
 
     add_settings_field('pw_cloudflare_api_key', 'API Key', 'pw_cloudflare_ruleset_manager_field_api_key', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
     add_settings_field('pw_cloudflare_api_email', 'API Email', 'pw_cloudflare_ruleset_manager_field_api_email', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
     add_settings_field('pw_cloudflare_account_id', 'Account ID', 'pw_cloudflare_ruleset_manager_field_account_id', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
+    add_settings_field('pw_cloudflare_user_agents', 'Allowlist User Agents', 'pw_cloudflare_ruleset_manager_field_user_agents', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
+    add_settings_field('pw_cloudflare_custom_allowed_ips', 'Custom Allowed IP Addresses', 'pw_cloudflare_ruleset_manager_field_custom_allowed_ips', 'pw_cloudflare-ruleset-manager', 'pw_cloudflare_ruleset_manager_main');
 }
 
 add_action('admin_init', 'pw_handle_delete_settings');
@@ -101,19 +136,19 @@ function pw_handle_delete_settings() {
         delete_option('pw_cloudflare_api_key');
         delete_option('pw_cloudflare_api_email');
         delete_option('pw_cloudflare_account_id');
-        
+                
         add_action('admin_notices', function() {
-            echo '<div class="notice notice-success is-dismissible"><p>Cloudflare WAF Rules Wizard settings have been deleted.</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . __('Cloudflare WAF Rules Wizard settings have been deleted.', 'cloudflare-waf-rules-wizard') . '</p></div>';
         });
     }
 }
 
 function pw_cloudflare_ruleset_manager_section_text() {
-    echo '<p>Enter your Cloudflare API Key and Email address, and the Account ID.</p>';
-    echo '<p>When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in.</p>';
-    echo '<p><a href="https://webagencyhero.com/cloudflare-waf-rules-v3/" target="_blank">Dig into Troy\'s WAF Rules v3 - each rule explained in detail</a>. You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules.</p>';
-    echo '<p><strong>NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!</strong></p>';
-    echo '<p>Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove.</p>';
+    echo '<p>' . __('First, enter your Cloudflare API Key and Email address, and the Account ID. Also select the known good user agents you\'d like to add to the Good Bot Skip rule.', 'cloudflare-waf-rules-wizard') . '</p>';
+    echo '<p>' . __('When you Save those settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in.', 'cloudflare-waf-rules-wizard') . '</p>';
+    echo '<p><a href="https://webagencyhero.com/cloudflare-waf-rules-v3/" target="_blank">' . __('Dig into Troy\'s WAF Rules v3 - each rule explained in detail', 'cloudflare-waf-rules-wizard') . '</a>. ' . __('You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules.', 'cloudflare-waf-rules-wizard') . '</p>';
+    echo '<p><strong>' . __('NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!', 'cloudflare-waf-rules-wizard') . '</strong></p>';
+    echo '<p>' . __('Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove.', 'cloudflare-waf-rules-wizard') . '</p>';
 }
 
 function pw_cloudflare_ruleset_manager_field_api_key() {
@@ -129,6 +164,129 @@ function pw_cloudflare_ruleset_manager_field_api_email() {
 function pw_cloudflare_ruleset_manager_field_account_id() {
     $accountId = get_option('pw_cloudflare_account_id');
     echo "<input type='text' name='pw_cloudflare_account_id' value='$accountId' />";
+}
+
+function pw_cloudflare_ruleset_manager_field_user_agents() {
+    $userAgents = get_option('pw_cloudflare_user_agents', []);
+    $customUserAgents = get_option('pw_cloudflare_custom_user_agents', '');
+
+    // Built-in options with headers and user agents
+    $availableAgents = [
+        ['name' => __('Security & Malware Scanners', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Wordfence/Central', 'value' => 'Wordfence'],
+        ['name' => 'Sucuri', 'value' => 'SucuriScan'],
+        ['name' => 'SiteLock', 'value' => 'SiteLockSpider'],
+        ['name' => 'VirusTotal', 'value' => 'virustotal'],
+
+        ['name' => __('Performance & Image Optimization Services', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Easy IO EWWW CDN', 'value' => 'ExactDN'],
+        ['name' => 'EWWW Image Optimizer', 'value' => 'ewww'],
+        ['name' => 'ShortPixel', 'value' => 'ShortPixel'],
+        ['name' => 'Imagify', 'value' => 'Imagify'],
+        ['name' => 'TinyPNG', 'value' => 'TinyPNG'],
+        ['name' => 'Cloudflare Image Resizing', 'value' => 'Cloudflare-Image-Resizing'],
+
+        ['name' => __('SEO Auditing & Crawlers', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Screaming Frog', 'value' => 'Screaming Frog SEO Spider'],
+        ['name' => 'Ahrefs', 'value' => 'AhrefsBot'],
+        ['name' => 'Semrush', 'value' => 'SemrushBot'],
+        ['name' => 'SEO PowerSuite', 'value' => 'LinkAssistant'],
+        ['name' => 'Majestic', 'value' => 'MJ12bot'],
+        ['name' => 'Moz', 'value' => 'rogerbot'],
+        ['name' => 'Serpstat', 'value' => 'SerpstatBot'],
+
+        ['name' => __('WordPress Management & Monitoring', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'ManageWP', 'value' => 'ManageWP'],
+        ['name' => 'MainWP', 'value' => 'MainWP'],
+        ['name' => 'WP Umbrella', 'value' => 'WPUmbrella'],
+        ['name' => 'WP Remote', 'value' => 'WP Remote'],
+        ['name' => 'iThemes Security', 'value' => 'iThemesSecurity'],
+        ['name' => 'InfiniteWP', 'value' => 'InfiniteWP'],
+        ['name' => 'Jetpack', 'value' => 'Jetpack'],
+
+        ['name' => __('Website Monitoring & Uptime Services', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Site24x7/ManageWP Uptime', 'value' => 'Site24x7'],
+        ['name' => 'UptimeRobot', 'value' => 'UptimeRobot'],
+        ['name' => 'Better Uptime', 'value' => 'Better Uptime'],
+        ['name' => 'Pingdom', 'value' => 'Pingdom'],
+        ['name' => 'GTmetrix', 'value' => 'GTmetrix'],
+        ['name' => 'StatusCake', 'value' => 'StatusCake'],
+        ['name' => 'Uptrends', 'value' => 'Uptrends'],
+        ['name' => 'Hyperspin', 'value' => 'Hyperspin'],
+        ['name' => 'NewRelic', 'value' => 'NewRelic'],
+        ['name' => 'Datadog', 'value' => 'Datadog'],
+        ['name' => 'Monitis', 'value' => 'Monitis'],
+
+        ['name' => __('Backup & Website Management Services', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'UpdraftPlus', 'value' => 'UpdraftPlus'],
+        ['name' => 'BackupBuddy', 'value' => 'BackupBuddy'],
+        ['name' => 'VaultPress', 'value' => 'VaultPress'],
+        ['name' => 'BlogVault', 'value' => 'BlogVault'],
+        ['name' => 'WP Time Capsule', 'value' => 'WPTC'],
+        ['name' => 'WP Vivid Backup', 'value' => 'WPVivid'],
+        ['name' => 'Duplicator', 'value' => 'Duplicator'],
+        ['name' => 'All-in-One WP Migration', 'value' => 'AllInOneWPMigration'],
+        ['name' => 'WP-CLI', 'value' => 'wp-cli'],
+        
+        ['name' => __('Link Preview & Archiving Services', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Facebook Link Preview', 'value' => 'facebookexternalhit'],
+        ['name' => 'Facebook', 'value' => 'meta-externalagent'],
+        ['name' => 'Twitter Link Preview', 'value' => 'Twitterbot'],
+        ['name' => 'LinkedIn Link Preview', 'value' => 'LinkedInBot'],
+        ['name' => 'Wayback Machine', 'value' => 'ia_archiver'],
+
+        ['name' => __('Other Site Utilities & Crawlers', 'cloudflare-waf-rules-wizard'), 'value' => 'header'],
+        ['name' => 'Google Lighthouse', 'value' => 'Lighthouse'],
+        ['name' => 'Cloudflare Page Speed Test', 'value' => 'CloudflareObservatory'],
+        ['name' => 'Wappalyzer', 'value' => 'Wappalyzer'],
+        ['name' => 'BuiltWith', 'value' => 'BuiltWith'],
+        ['name' => 'Netcraft', 'value' => 'NetcraftSurveyAgent'],
+        ['name' => 'W3C Validator', 'value' => 'W3C_Validator'],
+        ['name' => 'HTML5 Validator', 'value' => 'Nu Html Checker'],
+    ];
+
+    echo '<p><strong>' . __('Choose Built-in User Agents That Skip All Rules', 'cloudflare-waf-rules-wizard') . '</strong></p>';
+    echo '<p>' . __('Be selective in checking only those you know should be used on these sites.', 'cloudflare-waf-rules-wizard') . '</p>';
+    foreach ($availableAgents as $agent) {
+        if ($agent['value'] === 'header') {
+            // Display header without a checkbox
+            echo '<h4>' . esc_html($agent['name']) . '</h4>';
+        } else {
+            // Display checkbox for user agent
+            $checked = in_array($agent['value'], $userAgents) ? 'checked' : '';
+            echo "<label><input type='checkbox' name='pw_cloudflare_user_agents[]' value='" . esc_attr($agent['value']) . "' $checked> " . esc_html($agent['name']) . " (uses '" . esc_html($agent['value'])  . "')</label><br>";
+        }
+    }
+
+    echo '<p><strong>' . __('Custom User Agents:', 'cloudflare-waf-rules-wizard') . '</strong></p>';
+    echo '<p>' . __('Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed.', 'cloudflare-waf-rules-wizard') . '</p>';
+    echo "<textarea name='pw_cloudflare_custom_user_agents' rows='5' cols='50' placeholder='" . __('Enter one User Agent per line', 'cloudflare-waf-rules-wizard') . "'>" . esc_textarea($customUserAgents) . "</textarea>";
+}
+
+function pw_cloudflare_ruleset_manager_field_custom_allowed_ips() {
+    $customAllowedIps = get_option('pw_cloudflare_custom_allowed_ips', '');
+    echo '<p>' . __('Enter one IP address per line. Only valid IPv4 or IPv6 addresses are allowed.', 'cloudflare-waf-rules-wizard') . '</p>';
+    echo "<textarea name='pw_cloudflare_custom_allowed_ips' rows='5' cols='50' placeholder='" . __('Enter one IP address per line', 'cloudflare-waf-rules-wizard') . "'>" . esc_textarea($customAllowedIps) . "</textarea>";
+}
+
+function pw_sanitize_user_agents($input) {
+    return array_map('sanitize_text_field', (array) $input);
+}
+
+function pw_sanitize_custom_user_agents($input) {
+    $lines = array_filter(array_map('trim', explode("\n", $input))); // Split by lines and trim
+    $sanitized = array_filter($lines, function($line) {
+        return preg_match('/^[a-zA-Z0-9 _\-]+$/', $line); // Allow only alphanumeric, spaces, underscores, and hyphens
+    });
+    return implode("\n", $sanitized); // Rejoin valid lines
+}
+
+function pw_sanitize_custom_allowed_ips($input) {
+    $lines = array_filter(array_map('trim', explode("\n", $input))); // Split by lines and trim
+    $sanitized = array_filter($lines, function($line) {
+        return filter_var($line, FILTER_VALIDATE_IP); // Validate as IPv4 or IPv6
+    });
+    return implode("\n", $sanitized); // Rejoin valid lines
 }
 
 // Unified function to make curl requests
@@ -195,7 +353,7 @@ function pw_cloudflare_ruleset_manager_process_zones() {
     $zoneIds = isset($_POST['pw_zone_ids']) ? $_POST['pw_zone_ids'] : [];
 
     if (empty($apiKey) || empty($email) || empty($zoneIds)) {
-        echo '<div class="notice notice-error is-dismissible"><p>Please enter all the required fields.</p></div>';
+        echo '<div class="notice notice-error is-dismissible"><p>' . __('Please enter all the required fields.', 'cloudflare-waf-rules-wizard') . '</p></div>';
         return;
     }
 
@@ -205,10 +363,27 @@ function pw_cloudflare_ruleset_manager_process_zones() {
         "Content-Type: application/json",
     ];
 
+    $userAgents = get_option('pw_cloudflare_user_agents', []);
+    $customUserAgents = get_option('pw_cloudflare_custom_user_agents', '');
+    $customUserAgentsArray = array_filter(array_map('trim', explode("\n", $customUserAgents))); // Split by lines and trim
+
+    $customAllowedIps = get_option('pw_cloudflare_custom_allowed_ips', '');
+    $customAllowedIpsArray = array_filter(array_map('trim', explode("\n", $customAllowedIps))); // Split by lines and trim
+
+    $allUserAgents = array_merge($userAgents, $customUserAgentsArray);
+    $userAgentExpressions = array_map(function($agent) {
+        return "(http.user_agent contains \"$agent\")";
+    }, $allUserAgents);
+
+    // Generate IP expressions without quotes
+    $ipExpressions = array_map(function($ip) {
+        return "(ip.src eq $ip)";
+    }, $customAllowedIpsArray);
+
     $rules = [
         [
             'description' => 'Good Bots Allow',
-            'expression' => '(cf.client.bot) or (cf.verified_bot_category in {"Search Engine Crawler" "Search Engine Optimization" "Monitoring & Analytics" "Advertising & Marketing" "Page Preview" "Academic Research" "Security" "Accessibility" "Webhooks" "Feed Fetcher"}) or (http.user_agent contains "letsencrypt" and http.request.uri.path contains "acme-challenge") or (http.user_agent contains "ExactDN")',
+            'expression' => '(cf.client.bot) or (cf.verified_bot_category in {"Search Engine Crawler" "Search Engine Optimization" "Monitoring & Analytics" "Advertising & Marketing" "Page Preview" "Academic Research" "Security" "Accessibility" "Webhooks" "Feed Fetcher"}) or (http.user_agent contains "letsencrypt" and http.request.uri.path contains "acme-challenge")' . (count($userAgentExpressions) ? ' or ' . implode(' or ', $userAgentExpressions) : '') . (count($ipExpressions) ? ' or ' . implode(' or ', $ipExpressions) : ''),
             'action' => 'skip',
             'action_parameters' => [
                 'ruleset' => 'current',
@@ -264,12 +439,13 @@ function pw_cloudflare_ruleset_manager_process_zones() {
         return $response['result']['id'] ?? null;
     }
 
-    function pw_replaceRuleset($zoneId, $rulesetId, $headers, $rules) {
+    function pw_replace_or_patch_ruleset($zoneId, $rulesetId, $headers, $rules) {
         $url = "https://api.cloudflare.com/client/v4/zones/{$zoneId}/rulesets/{$rulesetId}";
-        $data = [
-            'rules' => $rules,
-        ];
+
+        // Always replace the entire ruleset using PUT
+        $data = ['rules' => $rules];
         $response = pw_makeCurlRequest($url, 'PUT', $headers, $data);
+
         return $response;
     }
 
@@ -289,17 +465,17 @@ function pw_cloudflare_ruleset_manager_process_zones() {
         if (!$rulesetId) {
             $rulesetId = pw_createRuleset($zoneId, $headers);
             if (!$rulesetId) {
-                echo '<div class="notice notice-error is-dismissible"><p>Failed to create ruleset for domain: ' . esc_html($zoneName) . '</p></div>';
+                echo '<div class="notice notice-error is-dismissible"><p>' . __('Failed to create ruleset for domain:', 'cloudflare-waf-rules-wizard') . ' ' . esc_html($zoneName) . '</p></div>';
                 continue;
             }
         }
 
-        $response = pw_replaceRuleset($zoneId, $rulesetId, $headers, $rules);
+        $response = pw_replace_or_patch_ruleset($zoneId, $rulesetId, $headers, $rules);
         if (isset($response['success']) && $response['success']) {
-            echo '<div class="notice notice-success is-dismissible"><p>Successfully updated ruleset for domain: ' . esc_html($zoneName) . '</p></div>';
+            echo '<div class="notice notice-success is-dismissible"><p>' . __('Successfully updated ruleset for domain:', 'cloudflare-waf-rules-wizard') . ' ' . esc_html($zoneName) . '</p></div>';
         } else {
-            $errorMsg = isset($response['errors'][0]['message']) ? $response['errors'][0]['message'] : 'Unknown error';
-            echo '<div class="notice notice-error is-dismissible"><p>Failed to update ruleset for domain: ' . esc_html($zoneName) . '. Error: ' . esc_html($errorMsg) . '</p></div>';
+            $errorMsg = isset($response['errors'][0]['message']) ? $response['errors'][0]['message'] : __('Unknown error', 'cloudflare-waf-rules-wizard');
+            echo '<div class="notice notice-error is-dismissible"><p>' . __('Failed to update ruleset for domain:', 'cloudflare-waf-rules-wizard') . ' ' . esc_html($zoneName) . '. ' . __('Error:', 'cloudflare-waf-rules-wizard') . ' ' . esc_html($errorMsg) . '</p></div>';
         }
     }
 }

@@ -1,6 +1,11 @@
 # Cloudflare WAF Rules Wizard
 A simple plugin to create Cloudflare WAF custom rules using your Cloudflare API key. This plugin is based on the amazing work by Troy Glancy and his superb [Cloudflare WAF Rules](https://webagencyhero.com/cloudflare-waf-rules-v3/?utm=github-presswizards-cloudflare-waf-rules-wizard). Read through the WAF rules logic and details on his site.
 
+<p/>
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
+</p>
+
 ## Summary
 This plugin can be installed on any WordPress site you own, and then use it to bulk create the rules to as many domains in your Cloudflare account, including delegated member accounts you have access to.
 
@@ -33,3 +38,8 @@ Last, check your Cloudflare WAF Rules to see if they have applied:
 After you are done adding your shiny new WAF Rules: ⚠️ **don't forget to click the Delete Settings button** after you are done using this plugin to remove your credentials from the database, for best security practices. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use, delete the settings, and then deactivate and delete the plugin. It is not recommended to keep the plugin settings long term, or to keep the plugin active. You can always repeat the above steps later for adding additional domains or deleting and recreating the rules for existing domains.
 
 ![cf-waf-wizard-delete-settings](https://github.com/zackpyle/cloudflare-waf-rules-wizard/assets/19413506/00a7ec48-c483-4017-a252-1adff80c600c)
+
+<p/>
+<a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
+If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
+</p>
