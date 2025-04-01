@@ -77,6 +77,10 @@ After you are done adding your shiny new WAF Rules: ⚠️ **don't forget to cli
 
 ![cf-waf-wizard-delete-settings](https://github.com/zackpyle/cloudflare-waf-rules-wizard/assets/19413506/00a7ec48-c483-4017-a252-1adff80c600c)
 
+The options page now hides the API key and Account ID, for Zoom training or overview video purposes, etc.
+
+![Display security only](https://github.com/user-attachments/assets/7a5f4299-0b35-4767-ad31-81482f38d76d)
+
 <p/>
 <a href="https://www.buymeacoffee.com/robwpdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a><br>
 If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
