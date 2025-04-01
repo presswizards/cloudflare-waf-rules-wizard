@@ -17,9 +17,17 @@ It takes your Cloudflare API key, email, and account ID, and then gets all the d
 ⚠️ **Use at your own risk.** These rules may block certain services such as monitoring, uptime, or CDN services, so you may need to add exclusions if those services suddenly can't connect to your domain(s), using the Events log in Cloudflare showing the user agent or other data to add to the first rule that allows requests to bypass the remaining rules.
 
 ## Configure Settings
-On the plugin's option page: First, add you credentials to the Cloudflare WAF Rules Wizard settings page in the plugin. Your email is the email you log in with. You can retrieve your [API key here](https://dash.cloudflare.com/profile/api-tokens). And [here are instructions](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/)  for where you can find your Account ID.
+On the plugin's option page: First, add you credentials to the Cloudflare WAF Rules Wizard settings page in the plugin. Your email is the email you log in with. You can retrieve your [API key here](https://dash.cloudflare.com/profile/api-tokens). And [here are instructions](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/)  for where you can find your Account ID, it should be the Overview page of one of the domains in the account. You can also add user agents and IPs to the Good Bots rule so they skip the other rules are are not challenged or blocked. 
 
 ![cf-waf-wizard-settings](https://github.com/zackpyle/cloudflare-waf-rules-wizard/assets/19413506/c7b5adf7-1f85-4c0f-9794-9d139a6f45c2)
+
+&nbsp;
+
+![New user agent checkbox options](https://github.com/user-attachments/assets/7953b72d-8627-4cc6-b23c-942249178fc9)
+
+&nbsp;
+
+![New custom user agents and IP options](https://github.com/user-attachments/assets/016d447b-f5c6-4baa-bd41-249f2d123a70)
 
 &nbsp;
 
