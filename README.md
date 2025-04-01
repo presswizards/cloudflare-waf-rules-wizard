@@ -38,6 +38,9 @@ Languages:
 	•	Thai → th.po
 	•	Hebrew → he.po
 
+ Translated using my cool PHP script that uses OpenAI ChatGPT, check it out:
+ https://github.com/presswizards/Translate-Plugins-OpenAI
+
 ## Some Important Notes
 ⚠️ **Please note that this plugin overwites the 5 WAF rules on all domains, it will erase the existing rules and create new ones.** These 5 rules should work with Cloudflare Free, Pro and Business plans. They do not work for Enterprise Cloudflare, which most likely your web hosting provider controls directly.
 
