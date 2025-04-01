@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cloudflare WAF Wizard\n"
+"POT-Creation-Date: 2025-03-31 12:01-0700\n"
+"PO-Revision-Date: 2025-04-01 01:20-0700\n"
+"Last-Translator: \n"
+"Language-Team: Rob Press Wizards https://presswizards.com/\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: cloudflare_waf_rules_wizard.php\n"
+
+#: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
+msgid "Cloudflare WAF Rules Wizard"
+msgstr "Cloudflare WAF ルールウィザード"
+
+#: cloudflare_waf_rules_wizard.php:30
+msgid "CF Rules Wizard"
+msgstr "CF ルールウィザード"
+
+#: cloudflare_waf_rules_wizard.php:41
+msgid "You do not have sufficient permissions to access this page."
+msgstr "このページにアクセスする権限がありません。"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Created by Rob Marlbrough at"
+msgstr "Rob Marlbrough によって作成されました"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
+msgstr "Press Wizards - WordPress デザイン、ホスティング、メンテナンス"
+
+#: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
+msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
+msgstr "このプラグインが時間を節約し、クライアントを助け、より良い仕事をするのに役立つ場合、感謝します。"
+
+#: cloudflare_waf_rules_wizard.php:62
+msgid "Select Domains to Reset WAF Custom Rules on:"
+msgstr "WAF カスタムルールをリセットするドメインを選択："
+
+#: cloudflare_waf_rules_wizard.php:65
+msgid "Select All"
+msgstr "すべて選択"
+
+#: cloudflare_waf_rules_wizard.php:76
+msgid "Create/Overwrite All WAF Rules"
+msgstr "すべての WAF ルールを作成/上書き"
+
+#: cloudflare_waf_rules_wizard.php:92
+msgid "Save Settings"
+msgstr "設定を保存"
+
+#: cloudflare_waf_rules_wizard.php:99
+msgid "Delete Settings"
+msgstr "設定を削除"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Based on"
+msgstr "基づいて"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
+msgstr "Troy Glancy の素晴らしい Cloudflare WAF ルール v3"
+
+#: cloudflare_waf_rules_wizard.php:139
+msgid "Cloudflare WAF Rules Wizard settings have been deleted."
+msgstr "Cloudflare WAF ルールウィザードの設定が削除されました。"
+
+#: cloudflare_waf_rules_wizard.php:145
+msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
+msgstr "Cloudflare API キー、メールアドレス、およびアカウント ID を入力してください。"
+
+#: cloudflare_waf_rules_wizard.php:146
+msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
+msgstr "設定を保存すると、アカウント ID の下のすべてのドメインが取得され、CF WAF カスタムルールを作成したいドメインを選択できます。"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
+msgstr "Troy の WAF ルール v3 を掘り下げる - 各ルールが詳細に説明されています"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
+msgstr "ルールを作成した後、Cloudflare の Security > WAF > Custom rules でさらにカスタマイズできます。"
+
+#: cloudflare_waf_rules_wizard.php:148
+msgid ""
+"NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at "
+"your own risk!"
+msgstr ""
+"注意: すべての WAF カスタムルールがリセットされます！そのドメインに他の WAF カスタムルールが存在する場合、それらは消去され、5 つの新しいルールが作成されま"
+"す。重要: 自己責任で使用してください！"
+
+#: cloudflare_waf_rules_wizard.php:149
+msgid ""
+"Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe "
+"future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
+msgstr ""
+"セキュリティのヒント: このプラグインの使用が終わったら、設定を削除ボタンをクリックして資格情報を削除してください。それらは保存時に暗号化されません。将来の"
+"バージョンでは暗号化され、無効化時にオプションが削除されるかもしれません。現在は、使用してから削除するための迅速でシンプルなプラグインです。"
+
+#: cloudflare_waf_rules_wizard.php:230
+msgid "Built-in User Agents:"
+msgstr "組み込みユーザーエージェント："
+
+#: cloudflare_waf_rules_wizard.php:236
+msgid "Custom User Agents:"
+msgstr "カスタムユーザーエージェント："
+
+#: cloudflare_waf_rules_wizard.php:237
+msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
+msgstr "1 行に 1 つのユーザーエージェントを入力します。使用できるのは英数字、スペース、アンダースコア、ハイフンのみです。"
+
+#: cloudflare_waf_rules_wizard.php:238
+msgid "Enter one User Agent per line"
+msgstr "1 行に 1 つのユーザーエージェントを入力"
+
+#: cloudflare_waf_rules_wizard.php:317
+msgid "Please enter all the required fields."
+msgstr "すべての必須フィールドを入力してください。"
+
+#: cloudflare_waf_rules_wizard.php:421
+msgid "Failed to create ruleset for domain:"
+msgstr "ドメインのルールセットの作成に失敗しました："
+
+#: cloudflare_waf_rules_wizard.php:428
+msgid "Successfully updated ruleset for domain:"
+msgstr "ドメインのルールセットが正常に更新されました："
+
+#: cloudflare_waf_rules_wizard.php:430
+msgid "Unknown error"
+msgstr "不明なエラー"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Failed to update ruleset for domain:"
+msgstr "ドメインのルールセットの更新に失敗しました："
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Error:"
+msgstr "エラー："

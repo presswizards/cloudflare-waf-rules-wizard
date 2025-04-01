@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cloudflare WAF Wizard\n"
 "POT-Creation-Date: 2025-03-31 12:01-0700\n"
-"PO-Revision-Date: 2025-04-01 01:20-0700\n"
+"PO-Revision-Date: 2025-04-01 01:19-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
-"Language: de\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,120 +17,128 @@ msgstr ""
 
 #: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
 msgid "Cloudflare WAF Rules Wizard"
-msgstr "Cloudflare WAF-Regel-Assistent"
+msgstr "Cloudflare WAF 규칙 마법사"
 
 #: cloudflare_waf_rules_wizard.php:30
 msgid "CF Rules Wizard"
-msgstr "CF Regel-Assistent"
+msgstr "CF 규칙 마법사"
 
 #: cloudflare_waf_rules_wizard.php:41
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Sie haben nicht die erforderlichen Berechtigungen, um auf diese Seite zuzugreifen."
+msgstr "이 페이지에 접근할 충분한 권한이 없습니다."
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Created by Rob Marlbrough at"
-msgstr "Erstellt von Rob Marlbrough bei"
+msgstr "Rob Marlbrough에 의해 제작됨"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
-msgstr "Press Wizards - WordPress Design, Hosting und Wartung"
+msgstr "Press Wizards - 워드프레스 디자인, 호스팅 및 유지보수"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
 msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
-msgstr "Wenn dieses Plugin Ihnen Zeit spart, Ihren Kunden hilft oder Ihre Arbeit verbessert, würde ich mich freuen."
+msgstr "이 플러그인이 시간을 절약하고, 고객을 돕거나, 더 나은 작업을 할 수 있도록 도와준다면 감사하겠습니다."
 
 #: cloudflare_waf_rules_wizard.php:62
 msgid "Select Domains to Reset WAF Custom Rules on:"
-msgstr "Wählen Sie Domains aus, um WAF-Benutzerdefinierte Regeln zurückzusetzen:"
+msgstr "WAF 사용자 정의 규칙을 재설정할 도메인 선택:"
 
 #: cloudflare_waf_rules_wizard.php:65
 msgid "Select All"
-msgstr "Alle auswählen"
+msgstr "모두 선택"
 
 #: cloudflare_waf_rules_wizard.php:76
 msgid "Create/Overwrite All WAF Rules"
-msgstr "Alle WAF-Regeln erstellen/überschreiben"
+msgstr "모든 WAF 규칙 생성/덮어쓰기"
 
 #: cloudflare_waf_rules_wizard.php:92
 msgid "Save Settings"
-msgstr "Einstellungen speichern"
+msgstr "설정 저장"
 
 #: cloudflare_waf_rules_wizard.php:99
 msgid "Delete Settings"
-msgstr "Einstellungen löschen"
+msgstr "설정 삭제"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Based on"
-msgstr "Basierend auf"
+msgstr "기반"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
-msgstr "Troy Glancys hervorragende Cloudflare WAF-Regeln v3"
+msgstr "Troy Glancy의 뛰어난 Cloudflare WAF 규칙 v3"
 
 #: cloudflare_waf_rules_wizard.php:139
 msgid "Cloudflare WAF Rules Wizard settings have been deleted."
-msgstr "Cloudflare WAF-Regel-Assistent Einstellungen wurden gelöscht."
+msgstr "Cloudflare WAF 규칙 마법사 설정이 삭제되었습니다."
 
 #: cloudflare_waf_rules_wizard.php:145
 msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
-msgstr "Geben Sie Ihren Cloudflare API-Schlüssel und Ihre E-Mail-Adresse sowie die Konto-ID ein."
+msgstr "Cloudflare API 키와 이메일 주소, 계정 ID를 입력하세요."
 
 #: cloudflare_waf_rules_wizard.php:146
 msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
-msgstr "Wenn Sie die Einstellungen speichern, werden alle Domains unter der Konto-ID abgerufen, und Sie können die auswählen, in denen CF WAF-Benutzerdefinierte Regeln erstellt werden sollen."
+msgstr "설정을 저장하면 계정 ID 아래의 모든 도메인을 가져오며, CF WAF 사용자 정의 규칙을 생성할 도메인을 선택할 수 있습니다."
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
-msgstr "Tauchen Sie in Troys WAF-Regeln v3 ein - jede Regel wird im Detail erklärt"
+msgstr "Troy의 WAF 규칙 v3를 깊이 탐구하세요 - 각 규칙이 자세히 설명되어 있습니다."
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
-msgstr "Sie können die Regeln weiter anpassen, nachdem sie direkt in Cloudflare unter Sicherheit > WAF > Benutzerdefinierte Regeln erstellt wurden."
+msgstr "Cloudflare의 보안 > WAF > 사용자 정의 규칙에서 규칙이 생성된 후 추가로 사용자 정의할 수 있습니다."
 
 #: cloudflare_waf_rules_wizard.php:148
-msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
-msgstr "HINWEIS: Es setzt alle WAF-Benutzerdefinierten Regeln zurück! Wenn andere WAF-Benutzerdefinierte Regeln für diese Domain existieren, werden sie gelöscht und 5 neue Regeln erstellt. WICHTIG: Nutzung auf eigene Gefahr!"
+msgid ""
+"NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use "
+"at your own risk!"
+msgstr ""
+"참고: 모든 WAF 사용자 정의 규칙이 재설정됩니다! 해당 도메인에 다른 WAF 사용자 정의 규칙이 있으면 삭제되고, 5개의 새로운 규칙이 생성됩니다. 중요: 사용 "
+"시 주의하세요!"
 
 #: cloudflare_waf_rules_wizard.php:149
-msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
-msgstr "Sicherheitstipp: Klicken Sie auf die Schaltfläche Einstellungen löschen, nachdem Sie dieses Plugin verwendet haben, um Ihre Anmeldedaten zu entfernen. Sie werden nicht verschlüsselt gespeichert. Vielleicht werden zukünftige Versionen sie verschlüsseln, die Optionen bei Deaktivierung löschen usw. Im Moment ist es ein schnelles und einfaches Plugin, das Sie verwenden und dann entfernen können."
+msgid ""
+"Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. "
+"Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
+msgstr ""
+"보안 팁: 이 플러그인 사용을 마친 후 설정 삭제 버튼을 클릭하여 자격 증명을 제거하세요. 저장 시 암호화되지 않습니다. 향후 버전에서는 암호화, 비활성화 시 "
+"옵션 삭제 등이 가능할 수 있습니다. 현재는 빠르고 간단하게 사용 후 제거할 수 있는 플러그인입니다."
 
 #: cloudflare_waf_rules_wizard.php:230
 msgid "Built-in User Agents:"
-msgstr "Eingebaute User Agents:"
+msgstr "내장 사용자 에이전트:"
 
 #: cloudflare_waf_rules_wizard.php:236
 msgid "Custom User Agents:"
-msgstr "Benutzerdefinierte User Agents:"
+msgstr "사용자 정의 에이전트:"
 
 #: cloudflare_waf_rules_wizard.php:237
 msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
-msgstr "Geben Sie einen User Agent pro Zeile ein. Es sind nur alphanumerische Zeichen, Leerzeichen, Unterstriche und Bindestriche erlaubt."
+msgstr "한 줄에 하나의 사용자 에이전트를 입력하세요. 영숫자, 공백, 밑줄 및 하이픈만 허용됩니다."
 
 #: cloudflare_waf_rules_wizard.php:238
 msgid "Enter one User Agent per line"
-msgstr "Geben Sie einen User Agent pro Zeile ein"
+msgstr "한 줄에 하나의 사용자 에이전트 입력"
 
 #: cloudflare_waf_rules_wizard.php:317
 msgid "Please enter all the required fields."
-msgstr "Bitte geben Sie alle erforderlichen Felder ein."
+msgstr "모든 필수 필드를 입력하세요."
 
 #: cloudflare_waf_rules_wizard.php:421
 msgid "Failed to create ruleset for domain:"
-msgstr "Fehler beim Erstellen des Regelsets für die Domain:"
+msgstr "도메인에 대한 규칙 세트 생성 실패:"
 
 #: cloudflare_waf_rules_wizard.php:428
 msgid "Successfully updated ruleset for domain:"
-msgstr "Regelset für die Domain erfolgreich aktualisiert:"
+msgstr "도메인에 대한 규칙 세트 업데이트 성공:"
 
 #: cloudflare_waf_rules_wizard.php:430
 msgid "Unknown error"
-msgstr "Unbekannter Fehler"
+msgstr "알 수 없는 오류"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Failed to update ruleset for domain:"
-msgstr "Fehler beim Aktualisieren des Regelsets für die Domain:"
+msgstr "도메인에 대한 규칙 세트 업데이트 실패:"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Error:"
-msgstr "Fehler:"
+msgstr "오류:"

@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cloudflare WAF Wizard\n"
 "POT-Creation-Date: 2025-03-31 12:01-0700\n"
-"PO-Revision-Date: 2025-04-01 01:20-0700\n"
+"PO-Revision-Date: 2025-04-01 01:17-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
-"Language: de\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,120 +17,120 @@ msgstr ""
 
 #: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
 msgid "Cloudflare WAF Rules Wizard"
-msgstr "Cloudflare WAF-Regel-Assistent"
+msgstr "Cloudflare WAF-regelguide"
 
 #: cloudflare_waf_rules_wizard.php:30
 msgid "CF Rules Wizard"
-msgstr "CF Regel-Assistent"
+msgstr "CF Regelguide"
 
 #: cloudflare_waf_rules_wizard.php:41
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Sie haben nicht die erforderlichen Berechtigungen, um auf diese Seite zuzugreifen."
+msgstr "Du har inte tillräckliga behörigheter för att komma åt denna sida."
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Created by Rob Marlbrough at"
-msgstr "Erstellt von Rob Marlbrough bei"
+msgstr "Skapad av Rob Marlbrough på"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
-msgstr "Press Wizards - WordPress Design, Hosting und Wartung"
+msgstr "Press Wizards - WordPress Design, Hosting och Underhåll"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
 msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
-msgstr "Wenn dieses Plugin Ihnen Zeit spart, Ihren Kunden hilft oder Ihre Arbeit verbessert, würde ich mich freuen."
+msgstr "Om detta plugin sparar tid, hjälper dina kunder eller hjälper dig att göra bättre arbete, skulle jag uppskatta det."
 
 #: cloudflare_waf_rules_wizard.php:62
 msgid "Select Domains to Reset WAF Custom Rules on:"
-msgstr "Wählen Sie Domains aus, um WAF-Benutzerdefinierte Regeln zurückzusetzen:"
+msgstr "Välj domäner att återställa WAF-anpassade regler på:"
 
 #: cloudflare_waf_rules_wizard.php:65
 msgid "Select All"
-msgstr "Alle auswählen"
+msgstr "Välj alla"
 
 #: cloudflare_waf_rules_wizard.php:76
 msgid "Create/Overwrite All WAF Rules"
-msgstr "Alle WAF-Regeln erstellen/überschreiben"
+msgstr "Skapa/skriv över alla WAF-regler"
 
 #: cloudflare_waf_rules_wizard.php:92
 msgid "Save Settings"
-msgstr "Einstellungen speichern"
+msgstr "Spara inställningar"
 
 #: cloudflare_waf_rules_wizard.php:99
 msgid "Delete Settings"
-msgstr "Einstellungen löschen"
+msgstr "Ta bort inställningar"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Based on"
-msgstr "Basierend auf"
+msgstr "Baserad på"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
-msgstr "Troy Glancys hervorragende Cloudflare WAF-Regeln v3"
+msgstr "Troy Glancys utmärkta Cloudflare WAF-regler v3"
 
 #: cloudflare_waf_rules_wizard.php:139
 msgid "Cloudflare WAF Rules Wizard settings have been deleted."
-msgstr "Cloudflare WAF-Regel-Assistent Einstellungen wurden gelöscht."
+msgstr "Inställningarna för Cloudflare WAF-regelguiden har raderats."
 
 #: cloudflare_waf_rules_wizard.php:145
 msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
-msgstr "Geben Sie Ihren Cloudflare API-Schlüssel und Ihre E-Mail-Adresse sowie die Konto-ID ein."
+msgstr "Ange din Cloudflare API-nyckel och e-postadress samt kontots ID."
 
 #: cloudflare_waf_rules_wizard.php:146
 msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
-msgstr "Wenn Sie die Einstellungen speichern, werden alle Domains unter der Konto-ID abgerufen, und Sie können die auswählen, in denen CF WAF-Benutzerdefinierte Regeln erstellt werden sollen."
+msgstr "När du sparar inställningarna hämtas alla domäner under kontots ID, och du kan välja de där du vill att CF WAF-anpassade regler ska skapas."
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
-msgstr "Tauchen Sie in Troys WAF-Regeln v3 ein - jede Regel wird im Detail erklärt"
+msgstr "Utforska Troys WAF-regler v3 - varje regel förklarad i detalj"
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
-msgstr "Sie können die Regeln weiter anpassen, nachdem sie direkt in Cloudflare unter Sicherheit > WAF > Benutzerdefinierte Regeln erstellt wurden."
+msgstr "Du kan ytterligare anpassa reglerna efter att de har skapats direkt i Cloudflare under Säkerhet > WAF > Anpassade regler."
 
 #: cloudflare_waf_rules_wizard.php:148
 msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
-msgstr "HINWEIS: Es setzt alle WAF-Benutzerdefinierten Regeln zurück! Wenn andere WAF-Benutzerdefinierte Regeln für diese Domain existieren, werden sie gelöscht und 5 neue Regeln erstellt. WICHTIG: Nutzung auf eigene Gefahr!"
+msgstr "OBS: Det återställer alla WAF-anpassade regler! Om det finns andra WAF-anpassade regler för den domänen kommer de att raderas och 5 nya regler skapas. VIKTIGT: Använd på egen risk!"
 
 #: cloudflare_waf_rules_wizard.php:149
 msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
-msgstr "Sicherheitstipp: Klicken Sie auf die Schaltfläche Einstellungen löschen, nachdem Sie dieses Plugin verwendet haben, um Ihre Anmeldedaten zu entfernen. Sie werden nicht verschlüsselt gespeichert. Vielleicht werden zukünftige Versionen sie verschlüsseln, die Optionen bei Deaktivierung löschen usw. Im Moment ist es ein schnelles und einfaches Plugin, das Sie verwenden und dann entfernen können."
+msgstr "Säkerhetstips: Klicka på knappen Ta bort inställningar när du är klar med att använda detta plugin för att ta bort dina referenser. De är inte krypterade när de lagras. Kanske kommer framtida versioner att kryptera, ta bort alternativen vid avaktivering, etc. Just nu är det ett snabbt och enkelt plugin för dig att använda och sedan ta bort."
 
 #: cloudflare_waf_rules_wizard.php:230
 msgid "Built-in User Agents:"
-msgstr "Eingebaute User Agents:"
+msgstr "Inbyggda användaragenter:"
 
 #: cloudflare_waf_rules_wizard.php:236
 msgid "Custom User Agents:"
-msgstr "Benutzerdefinierte User Agents:"
+msgstr "Anpassade användaragenter:"
 
 #: cloudflare_waf_rules_wizard.php:237
 msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
-msgstr "Geben Sie einen User Agent pro Zeile ein. Es sind nur alphanumerische Zeichen, Leerzeichen, Unterstriche und Bindestriche erlaubt."
+msgstr "Ange en användaragent per rad. Endast alfanumeriska tecken, mellanslag, understreck och bindestreck är tillåtna."
 
 #: cloudflare_waf_rules_wizard.php:238
 msgid "Enter one User Agent per line"
-msgstr "Geben Sie einen User Agent pro Zeile ein"
+msgstr "Ange en användaragent per rad"
 
 #: cloudflare_waf_rules_wizard.php:317
 msgid "Please enter all the required fields."
-msgstr "Bitte geben Sie alle erforderlichen Felder ein."
+msgstr "Vänligen fyll i alla obligatoriska fält."
 
 #: cloudflare_waf_rules_wizard.php:421
 msgid "Failed to create ruleset for domain:"
-msgstr "Fehler beim Erstellen des Regelsets für die Domain:"
+msgstr "Misslyckades med att skapa regelsats för domän:"
 
 #: cloudflare_waf_rules_wizard.php:428
 msgid "Successfully updated ruleset for domain:"
-msgstr "Regelset für die Domain erfolgreich aktualisiert:"
+msgstr "Regelsats för domän uppdaterades framgångsrikt:"
 
 #: cloudflare_waf_rules_wizard.php:430
 msgid "Unknown error"
-msgstr "Unbekannter Fehler"
+msgstr "Okänt fel"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Failed to update ruleset for domain:"
-msgstr "Fehler beim Aktualisieren des Regelsets für die Domain:"
+msgstr "Misslyckades med att uppdatera regelsats för domän:"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Error:"
-msgstr "Fehler:"
+msgstr "Fel:"

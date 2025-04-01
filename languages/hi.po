@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cloudflare WAF Wizard\n"
+"POT-Creation-Date: 2025-03-31 12:01-0700\n"
+"PO-Revision-Date: 2025-04-01 01:20-0700\n"
+"Last-Translator: \n"
+"Language-Team: Rob Press Wizards https://presswizards.com/\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: cloudflare_waf_rules_wizard.php\n"
+
+#: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
+msgid "Cloudflare WAF Rules Wizard"
+msgstr "क्लाउडफ्लेयर WAF नियम विज़ार्ड"
+
+#: cloudflare_waf_rules_wizard.php:30
+msgid "CF Rules Wizard"
+msgstr "सीएफ़ नियम विज़ार्ड"
+
+#: cloudflare_waf_rules_wizard.php:41
+msgid "You do not have sufficient permissions to access this page."
+msgstr "इस पृष्ठ का उपयोग करने के लिए आपके पास पर्याप्त अनुमतियाँ नहीं हैं।"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Created by Rob Marlbrough at"
+msgstr "रॉब मार्लब्रो द्वारा निर्मित"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
+msgstr "प्रेस विज़ार्ड्स - वर्डप्रेस डिज़ाइन, होस्टिंग, और रखरखाव"
+
+#: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
+msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
+msgstr "यदि यह प्लगइन आपका समय बचाता है, आपके ग्राहकों की मदद करता है, या आपको बेहतर काम करने में मदद करता है, तो मैं इसकी सराहना करूंगा।"
+
+#: cloudflare_waf_rules_wizard.php:62
+msgid "Select Domains to Reset WAF Custom Rules on:"
+msgstr "WAF कस्टम नियमों को रीसेट करने के लिए डोमेन चुनें:"
+
+#: cloudflare_waf_rules_wizard.php:65
+msgid "Select All"
+msgstr "सभी का चयन करें"
+
+#: cloudflare_waf_rules_wizard.php:76
+msgid "Create/Overwrite All WAF Rules"
+msgstr "सभी WAF नियम बनाएं/ओवरराइट करें"
+
+#: cloudflare_waf_rules_wizard.php:92
+msgid "Save Settings"
+msgstr "सेटिंग्स सहेजें"
+
+#: cloudflare_waf_rules_wizard.php:99
+msgid "Delete Settings"
+msgstr "सेटिंग्स हटाएं"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Based on"
+msgstr "आधारित"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
+msgstr "ट्रॉय ग्लेंसी के शानदार क्लाउडफ्लेयर WAF नियम v3 पर आधारित"
+
+#: cloudflare_waf_rules_wizard.php:139
+msgid "Cloudflare WAF Rules Wizard settings have been deleted."
+msgstr "क्लाउडफ्लेयर WAF नियम विज़ार्ड सेटिंग्स हटा दी गई हैं।"
+
+#: cloudflare_waf_rules_wizard.php:145
+msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
+msgstr "अपनी क्लाउडफ्लेयर API कुंजी और ईमेल पता, और खाता आईडी दर्ज करें।"
+
+#: cloudflare_waf_rules_wizard.php:146
+msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
+msgstr "जब आप सेटिंग्स सहेजते हैं, तो यह खाता आईडी के तहत सभी डोमेन प्राप्त करेगा, और आप उन डोमेन का चयन कर सकते हैं जिनमें आप CF WAF कस्टम नियम बनाना चाहते हैं।"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
+msgstr "ट्रॉय के WAF नियम v3 में गहराई से जाएं - प्रत्येक नियम का विस्तार से वर्णन किया गया है"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
+msgstr "आप सुरक्षा > WAF > कस्टम नियमों के तहत क्लाउडफ्लेयर में सीधे बनाए जाने के बाद नियमों को और अनुकूलित कर सकते हैं।"
+
+#: cloudflare_waf_rules_wizard.php:148
+msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
+msgstr "नोट: यह सभी WAF कस्टम नियमों को रीसेट करता है! यदि उस डोमेन के लिए कोई अन्य WAF कस्टम नियम मौजूद हैं, तो यह उन्हें मिटा देगा, और 5 नए नियम बनाएगा। महत्वपूर्ण: अपने जोखिम पर उपयोग करें!"
+
+#: cloudflare_waf_rules_wizard.php:149
+msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
+msgstr "सुरक्षा टिप: इस प्लगइन का उपयोग करने के बाद अपनी क्रेडेंशियल्स को हटाने के लिए सेटिंग्स हटाएं बटन पर क्लिक करें। वे संग्रहीत होने पर एन्क्रिप्ट नहीं होते हैं। शायद भविष्य के संस्करण एन्क्रिप्ट करेंगे, निष्क्रियता पर विकल्पों को हटा देंगे, आदि। अभी यह आपके लिए उपयोग करने और फिर हटाने के लिए एक त्वरित और सरल प्लगइन है।"
+
+#: cloudflare_waf_rules_wizard.php:230
+msgid "Built-in User Agents:"
+msgstr "बिल्ट-इन यूजर एजेंट्स:"
+
+#: cloudflare_waf_rules_wizard.php:236
+msgid "Custom User Agents:"
+msgstr "कस्टम यूजर एजेंट्स:"
+
+#: cloudflare_waf_rules_wizard.php:237
+msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
+msgstr "प्रति पंक्ति एक यूजर एजेंट दर्ज करें। केवल अल्फ़ान्यूमेरिक वर्ण, स्पेस, अंडरस्कोर, और हाइफन की अनुमति है।"
+
+#: cloudflare_waf_rules_wizard.php:238
+msgid "Enter one User Agent per line"
+msgstr "प्रति पंक्ति एक यूजर एजेंट दर्ज करें"
+
+#: cloudflare_waf_rules_wizard.php:317
+msgid "Please enter all the required fields."
+msgstr "कृपया सभी आवश्यक फ़ील्ड दर्ज करें।"
+
+#: cloudflare_waf_rules_wizard.php:421
+msgid "Failed to create ruleset for domain:"
+msgstr "डोमेन के लिए नियम सेट बनाने में विफल:"
+
+#: cloudflare_waf_rules_wizard.php:428
+msgid "Successfully updated ruleset for domain:"
+msgstr "डोमेन के लिए नियम सेट सफलतापूर्वक अपडेट किया गया:"
+
+#: cloudflare_waf_rules_wizard.php:430
+msgid "Unknown error"
+msgstr "अज्ञात त्रुटि"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Failed to update ruleset for domain:"
+msgstr "डोमेन के लिए नियम सेट अपडेट करने में विफल:"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Error:"
+msgstr "त्रुटि:"

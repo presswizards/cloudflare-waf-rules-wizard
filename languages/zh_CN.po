@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cloudflare WAF Wizard\n"
 "POT-Creation-Date: 2025-03-31 12:01-0700\n"
-"PO-Revision-Date: 2025-04-01 01:20-0700\n"
+"PO-Revision-Date: 2025-04-01 01:17-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
-"Language: fr\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,152 +17,139 @@ msgstr ""
 
 #: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
 msgid "Cloudflare WAF Rules Wizard"
-msgstr "Assistant de règles WAF Cloudflare"
+msgstr "Cloudflare WAF 规则向导"
 
 #: cloudflare_waf_rules_wizard.php:30
 msgid "CF Rules Wizard"
-msgstr "Assistant de règles CF"
+msgstr "CF 规则向导"
 
 #: cloudflare_waf_rules_wizard.php:41
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas les autorisations suffisantes pour accéder à cette page."
+msgstr "您没有足够的权限访问此页面。"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Created by Rob Marlbrough at"
-msgstr "Créé par Rob Marlbrough chez"
+msgstr "由 Rob Marlbrough 创建于"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
-msgstr "Press Wizards - Conception, hébergement et maintenance WordPress"
+msgstr "Press Wizards - WordPress 设计、托管和维护"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
 msgid ""
-"If this plugin saves you time, helps your clients, or helps you do better work, "
-"I'd appreciate it."
-msgstr ""
-"Si ce plugin vous fait gagner du temps, aide vos clients ou vous aide à faire un "
-"meilleur travail, je l'apprécierais."
+"If this plugin saves you time, helps your clients, or helps you do better work, I'd "
+"appreciate it."
+msgstr "如果这个插件为您节省了时间，帮助了您的客户，或帮助您做得更好，我将不胜感激。"
 
 #: cloudflare_waf_rules_wizard.php:62
 msgid "Select Domains to Reset WAF Custom Rules on:"
-msgstr "Sélectionnez les domaines pour réinitialiser les règles WAF personnalisées :"
+msgstr "选择要重置 WAF 自定义规则的域："
 
 #: cloudflare_waf_rules_wizard.php:65
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr "全选"
 
 #: cloudflare_waf_rules_wizard.php:76
 msgid "Create/Overwrite All WAF Rules"
-msgstr "Créer/Écraser toutes les règles WAF"
+msgstr "创建/覆盖所有 WAF 规则"
 
 #: cloudflare_waf_rules_wizard.php:92
 msgid "Save Settings"
-msgstr "Enregistrer les paramètres"
+msgstr "保存设置"
 
 #: cloudflare_waf_rules_wizard.php:99
 msgid "Delete Settings"
-msgstr "Supprimer les paramètres"
+msgstr "删除设置"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Based on"
-msgstr "Basé sur"
+msgstr "基于"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
-msgstr "Les superbes règles WAF Cloudflare v3 de Troy Glancy"
+msgstr "Troy Glancy 的出色 Cloudflare WAF 规则 v3"
 
 #: cloudflare_waf_rules_wizard.php:139
 msgid "Cloudflare WAF Rules Wizard settings have been deleted."
-msgstr "Les paramètres de l'assistant de règles WAF Cloudflare ont été supprimés."
+msgstr "Cloudflare WAF 规则向导设置已被删除。"
 
 #: cloudflare_waf_rules_wizard.php:145
 msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
-msgstr "Entrez votre clé API Cloudflare, votre adresse e-mail et l'ID de compte."
+msgstr "输入您的 Cloudflare API 密钥和电子邮件地址，以及账户 ID。"
 
 #: cloudflare_waf_rules_wizard.php:146
 msgid ""
 "When you Save the settings, it will get all the domains under the account ID, and "
 "you can select the ones you want CF WAF custom rules created in."
 msgstr ""
-"Lorsque vous enregistrez les paramètres, il récupérera tous les domaines sous l'ID "
-"de compte, et vous pourrez sélectionner ceux dans lesquels vous voulez que les "
-"règles WAF personnalisées CF soient créées."
+"当您保存设置时，它将获取账户 ID 下的所有域，您可以选择要创建 CF WAF 自定义规则的域。"
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
-msgstr "Explorez les règles WAF v3 de Troy - chaque règle expliquée en détail"
+msgstr "深入了解 Troy 的 WAF 规则 v3 - 每条规则都有详细解释"
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid ""
 "You can further customize the rules after they are created directly in Cloudflare "
 "under Security > WAF > Custom rules."
-msgstr ""
-"Vous pouvez personnaliser davantage les règles après leur création directement "
-"dans Cloudflare sous Sécurité > WAF > Règles personnalisées."
+msgstr "您可以在 Cloudflare 的 Security > WAF > Custom rules 下直接进一步自定义规则。"
 
 #: cloudflare_waf_rules_wizard.php:148
 msgid ""
 "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that "
-"domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own "
-"risk!"
+"domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
 msgstr ""
-"REMARQUE : Cela réinitialise toutes les règles WAF personnalisées ! Si d'autres "
-"règles WAF personnalisées existent pour ce domaine, elles seront effacées, et 5 "
-"nouvelles règles seront créées. IMPORTANT : Utilisez à vos propres risques !"
+"注意：这将重置所有 WAF 自定义规则！如果该域存在其他 WAF 自定义规则，它将删除它们，并"
+"创建 5 条新规则。重要：使用风险自负！"
 
 #: cloudflare_waf_rules_wizard.php:149
 msgid ""
-"Security Tip: Click the Delete Settings button after you are done using this "
-"plugin to remove your credentials. They are not encrypted when stored. Maybe "
-"future versions will encrypt, delete the options on deactivation, etc. Right now "
-"it is a quick and simple plugin for you to use and then remove."
+"Security Tip: Click the Delete Settings button after you are done using this plugin "
+"to remove your credentials. They are not encrypted when stored. Maybe future "
+"versions will encrypt, delete the options on deactivation, etc. Right now it is a "
+"quick and simple plugin for you to use and then remove."
 msgstr ""
-"Conseil de sécurité : Cliquez sur le bouton Supprimer les paramètres après avoir "
-"fini d'utiliser ce plugin pour supprimer vos identifiants. Ils ne sont pas cryptés "
-"lorsqu'ils sont stockés. Peut-être que les futures versions les chiffreront, "
-"supprimeront les options à la désactivation, etc. Pour l'instant, c'est un plugin "
-"rapide et simple à utiliser puis à supprimer."
+"安全提示：使用完此插件后，点击删除设置按钮以移除您的凭据。存储时未加密。未来版本可能"
+"会加密，停用时删除选项等。目前这是一个快速简单的插件，供您使用后移除。"
 
 #: cloudflare_waf_rules_wizard.php:230
 msgid "Built-in User Agents:"
-msgstr "Agents utilisateurs intégrés :"
+msgstr "内置用户代理："
 
 #: cloudflare_waf_rules_wizard.php:236
 msgid "Custom User Agents:"
-msgstr "Agents utilisateurs personnalisés :"
+msgstr "自定义用户代理："
 
 #: cloudflare_waf_rules_wizard.php:237
 msgid ""
 "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, "
 "and hyphens are allowed."
-msgstr ""
-"Entrez un agent utilisateur par ligne. Seuls les caractères alphanumériques, les "
-"espaces, les underscores et les tirets sont autorisés."
+msgstr "每行输入一个用户代理。仅允许字母数字字符、空格、下划线和连字符。"
 
 #: cloudflare_waf_rules_wizard.php:238
 msgid "Enter one User Agent per line"
-msgstr "Entrez un agent utilisateur par ligne"
+msgstr "每行输入一个用户代理"
 
 #: cloudflare_waf_rules_wizard.php:317
 msgid "Please enter all the required fields."
-msgstr "Veuillez entrer tous les champs requis."
+msgstr "请输入所有必填字段。"
 
 #: cloudflare_waf_rules_wizard.php:421
 msgid "Failed to create ruleset for domain:"
-msgstr "Échec de la création du jeu de règles pour le domaine :"
+msgstr "为域创建规则集失败："
 
 #: cloudflare_waf_rules_wizard.php:428
 msgid "Successfully updated ruleset for domain:"
-msgstr "Jeu de règles mis à jour avec succès pour le domaine :"
+msgstr "成功更新域的规则集："
 
 #: cloudflare_waf_rules_wizard.php:430
 msgid "Unknown error"
-msgstr "Erreur inconnue"
+msgstr "未知错误"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Failed to update ruleset for domain:"
-msgstr "Échec de la mise à jour du jeu de règles pour le domaine :"
+msgstr "更新域的规则集失败："
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Error:"
-msgstr "Erreur :"
+msgstr "错误："

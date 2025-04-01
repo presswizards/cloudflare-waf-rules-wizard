@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cloudflare WAF Wizard\n"
+"POT-Creation-Date: 2025-03-31 12:01-0700\n"
+"PO-Revision-Date: 2025-04-01 01:29-0700\n"
+"Last-Translator: \n"
+"Language-Team: Rob Press Wizards https://presswizards.com/\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: cloudflare_waf_rules_wizard.php\n"
+
+#: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
+msgid "Cloudflare WAF Rules Wizard"
+msgstr "Οδηγός Κανόνων WAF Cloudflare"
+
+#: cloudflare_waf_rules_wizard.php:30
+msgid "CF Rules Wizard"
+msgstr "Οδηγός Κανόνων CF"
+
+#: cloudflare_waf_rules_wizard.php:41
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Δεν έχετε επαρκή δικαιώματα για να αποκτήσετε πρόσβαση σε αυτή τη σελίδα."
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Created by Rob Marlbrough at"
+msgstr "Δημιουργήθηκε από τον Rob Marlbrough στο"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
+msgstr "Press Wizards - Σχεδιασμός, Φιλοξενία και Συντήρηση WordPress"
+
+#: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
+msgid ""
+"If this plugin saves you time, helps your clients, or helps you do better work, I'd "
+"appreciate it."
+msgstr ""
+"Αν αυτό το πρόσθετο σας εξοικονομεί χρόνο, βοηθά τους πελάτες σας ή σας βοηθά να κάνετε "
+"καλύτερη δουλειά, θα το εκτιμούσα."
+
+#: cloudflare_waf_rules_wizard.php:62
+msgid "Select Domains to Reset WAF Custom Rules on:"
+msgstr "Επιλέξτε τομείς για επαναφορά Προσαρμοσμένων Κανόνων WAF σε:"
+
+#: cloudflare_waf_rules_wizard.php:65
+msgid "Select All"
+msgstr "Επιλογή Όλων"
+
+#: cloudflare_waf_rules_wizard.php:76
+msgid "Create/Overwrite All WAF Rules"
+msgstr "Δημιουργία/Εγγραφή Όλων των Κανόνων WAF"
+
+#: cloudflare_waf_rules_wizard.php:92
+msgid "Save Settings"
+msgstr "Αποθήκευση Ρυθμίσεων"
+
+#: cloudflare_waf_rules_wizard.php:99
+msgid "Delete Settings"
+msgstr "Διαγραφή Ρυθμίσεων"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Based on"
+msgstr "Βασισμένο στο"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
+msgstr "Εξαιρετικοί Κανόνες WAF Cloudflare v3 του Troy Glancy"
+
+#: cloudflare_waf_rules_wizard.php:139
+msgid "Cloudflare WAF Rules Wizard settings have been deleted."
+msgstr "Οι ρυθμίσεις του Οδηγού Κανόνων WAF Cloudflare έχουν διαγραφεί."
+
+#: cloudflare_waf_rules_wizard.php:145
+msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
+msgstr "Εισαγάγετε το Cloudflare API Key και τη διεύθυνση Email σας, και το ID Λογαριασμού."
+
+#: cloudflare_waf_rules_wizard.php:146
+msgid ""
+"When you Save the settings, it will get all the domains under the account ID, and you can "
+"select the ones you want CF WAF custom rules created in."
+msgstr ""
+"Όταν αποθηκεύετε τις ρυθμίσεις, θα λάβει όλους τους τομείς κάτω από το ID λογαριασμού, "
+"και μπορείτε να επιλέξετε αυτούς στους οποίους θέλετε να δημιουργηθούν προσαρμοσμένοι "
+"κανόνες CF WAF."
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
+msgstr "Εξερευνήστε τους Κανόνες WAF v3 του Troy - κάθε κανόνας εξηγείται λεπτομερώς"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid ""
+"You can further customize the rules after they are created directly in Cloudflare under "
+"Security > WAF > Custom rules."
+msgstr ""
+"Μπορείτε να προσαρμόσετε περαιτέρω τους κανόνες μετά τη δημιουργία τους απευθείας στο "
+"Cloudflare κάτω από Ασφάλεια > WAF > Προσαρμοσμένοι κανόνες."
+
+#: cloudflare_waf_rules_wizard.php:148
+msgid ""
+"NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that "
+"domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
+msgstr ""
+"ΣΗΜΕΙΩΣΗ: Επαναφέρει όλους τους προσαρμοσμένους κανόνες WAF! Αν υπάρχουν άλλοι "
+"προσαρμοσμένοι κανόνες WAF για αυτόν τον τομέα, θα τους διαγράψει και θα δημιουργήσει 5 "
+"νέους κανόνες. ΣΗΜΑΝΤΙΚΟ: Χρησιμοποιήστε με δική σας ευθύνη!"
+
+#: cloudflare_waf_rules_wizard.php:149
+msgid ""
+"Security Tip: Click the Delete Settings button after you are done using this plugin to "
+"remove your credentials. They are not encrypted when stored. Maybe future versions will "
+"encrypt, delete the options on deactivation, etc. Right now it is a quick and simple "
+"plugin for you to use and then remove."
+msgstr ""
+"Συμβουλή Ασφαλείας: Κάντε κλικ στο κουμπί Διαγραφή Ρυθμίσεων αφού τελειώσετε τη χρήση "
+"αυτού του πρόσθετου για να αφαιρέσετε τα διαπιστευτήριά σας. Δεν είναι κρυπτογραφημένα "
+"όταν αποθηκεύονται. Ίσως μελλοντικές εκδόσεις θα τα κρυπτογραφούν, θα διαγράφουν τις "
+"επιλογές κατά την απενεργοποίηση, κλπ. Αυτή τη στιγμή είναι ένα γρήγορο και απλό πρόσθετο "
+"για να χρησιμοποιήσετε και μετά να αφαιρέσετε."
+
+#: cloudflare_waf_rules_wizard.php:230
+msgid "Built-in User Agents:"
+msgstr "Ενσωματωμένοι Χρήστες Πρακτόρων:"
+
+#: cloudflare_waf_rules_wizard.php:236
+msgid "Custom User Agents:"
+msgstr "Προσαρμοσμένοι Χρήστες Πρακτόρων:"
+
+#: cloudflare_waf_rules_wizard.php:237
+msgid ""
+"Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and "
+"hyphens are allowed."
+msgstr ""
+"Εισαγάγετε έναν Χρήστη Πράκτορα ανά γραμμή. Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, "
+"κενά, υπογραμμίσεις και παύλες."
+
+#: cloudflare_waf_rules_wizard.php:238
+msgid "Enter one User Agent per line"
+msgstr "Εισαγάγετε έναν Χρήστη Πράκτορα ανά γραμμή"
+
+#: cloudflare_waf_rules_wizard.php:317
+msgid "Please enter all the required fields."
+msgstr "Παρακαλώ εισαγάγετε όλα τα απαιτούμενα πεδία."
+
+#: cloudflare_waf_rules_wizard.php:421
+msgid "Failed to create ruleset for domain:"
+msgstr "Αποτυχία δημιουργίας συνόλου κανόνων για τον τομέα:"
+
+#: cloudflare_waf_rules_wizard.php:428
+msgid "Successfully updated ruleset for domain:"
+msgstr "Επιτυχής ενημέρωση συνόλου κανόνων για τον τομέα:"
+
+#: cloudflare_waf_rules_wizard.php:430
+msgid "Unknown error"
+msgstr "Άγνωστο σφάλμα"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Failed to update ruleset for domain:"
+msgstr "Αποτυχία ενημέρωσης συνόλου κανόνων για τον τομέα:"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Error:"
+msgstr "Σφάλμα:"

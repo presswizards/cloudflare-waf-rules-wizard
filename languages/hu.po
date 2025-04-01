@@ -5,7 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2025-04-01 01:20-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
-"Language: de\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,120 +17,120 @@ msgstr ""
 
 #: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
 msgid "Cloudflare WAF Rules Wizard"
-msgstr "Cloudflare WAF-Regel-Assistent"
+msgstr "Cloudflare WAF Szabályok Varázsló"
 
 #: cloudflare_waf_rules_wizard.php:30
 msgid "CF Rules Wizard"
-msgstr "CF Regel-Assistent"
+msgstr "CF Szabályok Varázsló"
 
 #: cloudflare_waf_rules_wizard.php:41
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Sie haben nicht die erforderlichen Berechtigungen, um auf diese Seite zuzugreifen."
+msgstr "Nincs megfelelő jogosultsága az oldal eléréséhez."
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Created by Rob Marlbrough at"
-msgstr "Erstellt von Rob Marlbrough bei"
+msgstr "Készítette: Rob Marlbrough a"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
-msgstr "Press Wizards - WordPress Design, Hosting und Wartung"
+msgstr "Press Wizards - WordPress Tervezés, Tárhely és Karbantartás"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
 msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
-msgstr "Wenn dieses Plugin Ihnen Zeit spart, Ihren Kunden hilft oder Ihre Arbeit verbessert, würde ich mich freuen."
+msgstr "Ha ez a bővítmény időt spórol meg, segíti az ügyfeleit, vagy jobb munkát végezhet vele, azt nagyra értékelném."
 
 #: cloudflare_waf_rules_wizard.php:62
 msgid "Select Domains to Reset WAF Custom Rules on:"
-msgstr "Wählen Sie Domains aus, um WAF-Benutzerdefinierte Regeln zurückzusetzen:"
+msgstr "Válassza ki a domaineket a WAF egyéni szabályok visszaállításához:"
 
 #: cloudflare_waf_rules_wizard.php:65
 msgid "Select All"
-msgstr "Alle auswählen"
+msgstr "Összes kiválasztása"
 
 #: cloudflare_waf_rules_wizard.php:76
 msgid "Create/Overwrite All WAF Rules"
-msgstr "Alle WAF-Regeln erstellen/überschreiben"
+msgstr "Összes WAF szabály létrehozása/átírása"
 
 #: cloudflare_waf_rules_wizard.php:92
 msgid "Save Settings"
-msgstr "Einstellungen speichern"
+msgstr "Beállítások mentése"
 
 #: cloudflare_waf_rules_wizard.php:99
 msgid "Delete Settings"
-msgstr "Einstellungen löschen"
+msgstr "Beállítások törlése"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Based on"
-msgstr "Basierend auf"
+msgstr "Alapján"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
-msgstr "Troy Glancys hervorragende Cloudflare WAF-Regeln v3"
+msgstr "Troy Glancy kiváló Cloudflare WAF Szabályok v3"
 
 #: cloudflare_waf_rules_wizard.php:139
 msgid "Cloudflare WAF Rules Wizard settings have been deleted."
-msgstr "Cloudflare WAF-Regel-Assistent Einstellungen wurden gelöscht."
+msgstr "A Cloudflare WAF Szabályok Varázsló beállításai törölve lettek."
 
 #: cloudflare_waf_rules_wizard.php:145
 msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
-msgstr "Geben Sie Ihren Cloudflare API-Schlüssel und Ihre E-Mail-Adresse sowie die Konto-ID ein."
+msgstr "Adja meg a Cloudflare API kulcsát, e-mail címét és a fiókazonosítót."
 
 #: cloudflare_waf_rules_wizard.php:146
 msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
-msgstr "Wenn Sie die Einstellungen speichern, werden alle Domains unter der Konto-ID abgerufen, und Sie können die auswählen, in denen CF WAF-Benutzerdefinierte Regeln erstellt werden sollen."
+msgstr "Amikor elmenti a beállításokat, lekéri az összes domaint a fiókazonosító alatt, és kiválaszthatja azokat, amelyekben CF WAF egyéni szabályokat szeretne létrehozni."
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
-msgstr "Tauchen Sie in Troys WAF-Regeln v3 ein - jede Regel wird im Detail erklärt"
+msgstr "Merüljön el Troy WAF Szabályok v3-ban - minden szabály részletesen elmagyarázva"
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
-msgstr "Sie können die Regeln weiter anpassen, nachdem sie direkt in Cloudflare unter Sicherheit > WAF > Benutzerdefinierte Regeln erstellt wurden."
+msgstr "A szabályokat továbbiakban testre szabhatja, miután létrehozta őket közvetlenül a Cloudflare alatt a Biztonság > WAF > Egyéni szabályok menüpontban."
 
 #: cloudflare_waf_rules_wizard.php:148
 msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
-msgstr "HINWEIS: Es setzt alle WAF-Benutzerdefinierten Regeln zurück! Wenn andere WAF-Benutzerdefinierte Regeln für diese Domain existieren, werden sie gelöscht und 5 neue Regeln erstellt. WICHTIG: Nutzung auf eigene Gefahr!"
+msgstr "MEGJEGYZÉS: Minden WAF egyéni szabályt visszaállít! Ha bármilyen más WAF egyéni szabály létezik az adott domainhez, törli őket, és 5 új szabályt hoz létre. FONTOS: Saját felelősségére használja!"
 
 #: cloudflare_waf_rules_wizard.php:149
 msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
-msgstr "Sicherheitstipp: Klicken Sie auf die Schaltfläche Einstellungen löschen, nachdem Sie dieses Plugin verwendet haben, um Ihre Anmeldedaten zu entfernen. Sie werden nicht verschlüsselt gespeichert. Vielleicht werden zukünftige Versionen sie verschlüsseln, die Optionen bei Deaktivierung löschen usw. Im Moment ist es ein schnelles und einfaches Plugin, das Sie verwenden und dann entfernen können."
+msgstr "Biztonsági tipp: Kattintson a Beállítások törlése gombra, miután befejezte a bővítmény használatát, hogy eltávolítsa a hitelesítő adatait. Ezek nincsenek titkosítva tároláskor. Lehet, hogy a jövőbeli verziók titkosítják, törlik az opciókat deaktiváláskor, stb. Jelenleg ez egy gyors és egyszerű bővítmény az Ön számára, amelyet használhat, majd eltávolíthat."
 
 #: cloudflare_waf_rules_wizard.php:230
 msgid "Built-in User Agents:"
-msgstr "Eingebaute User Agents:"
+msgstr "Beépített Felhasználói Ügynökök:"
 
 #: cloudflare_waf_rules_wizard.php:236
 msgid "Custom User Agents:"
-msgstr "Benutzerdefinierte User Agents:"
+msgstr "Egyéni Felhasználói Ügynökök:"
 
 #: cloudflare_waf_rules_wizard.php:237
 msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
-msgstr "Geben Sie einen User Agent pro Zeile ein. Es sind nur alphanumerische Zeichen, Leerzeichen, Unterstriche und Bindestriche erlaubt."
+msgstr "Adjon meg egy Felhasználói Ügynököt soronként. Csak alfanumerikus karakterek, szóközök, aláhúzások és kötőjelek engedélyezettek."
 
 #: cloudflare_waf_rules_wizard.php:238
 msgid "Enter one User Agent per line"
-msgstr "Geben Sie einen User Agent pro Zeile ein"
+msgstr "Adjon meg egy Felhasználói Ügynököt soronként"
 
 #: cloudflare_waf_rules_wizard.php:317
 msgid "Please enter all the required fields."
-msgstr "Bitte geben Sie alle erforderlichen Felder ein."
+msgstr "Kérjük, adja meg az összes kötelező mezőt."
 
 #: cloudflare_waf_rules_wizard.php:421
 msgid "Failed to create ruleset for domain:"
-msgstr "Fehler beim Erstellen des Regelsets für die Domain:"
+msgstr "Nem sikerült létrehozni a szabálykészletet a domainhez:"
 
 #: cloudflare_waf_rules_wizard.php:428
 msgid "Successfully updated ruleset for domain:"
-msgstr "Regelset für die Domain erfolgreich aktualisiert:"
+msgstr "Sikeresen frissítve a szabálykészlet a domainhez:"
 
 #: cloudflare_waf_rules_wizard.php:430
 msgid "Unknown error"
-msgstr "Unbekannter Fehler"
+msgstr "Ismeretlen hiba"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Failed to update ruleset for domain:"
-msgstr "Fehler beim Aktualisieren des Regelsets für die Domain:"
+msgstr "Nem sikerült frissíteni a szabálykészletet a domainhez:"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Error:"
-msgstr "Fehler:"
+msgstr "Hiba:"

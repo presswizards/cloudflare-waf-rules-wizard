@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cloudflare WAF Wizard\n"
+"POT-Creation-Date: 2025-03-31 12:01-0700\n"
+"PO-Revision-Date: 2025-04-01 01:18-0700\n"
+"Last-Translator: \n"
+"Language-Team: Rob Press Wizards https://presswizards.com/\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: cloudflare_waf_rules_wizard.php\n"
+
+#: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
+msgid "Cloudflare WAF Rules Wizard"
+msgstr "Мастер правил Cloudflare WAF"
+
+#: cloudflare_waf_rules_wizard.php:30
+msgid "CF Rules Wizard"
+msgstr "Мастер правил CF"
+
+#: cloudflare_waf_rules_wizard.php:41
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас недостаточно прав для доступа к этой странице."
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Created by Rob Marlbrough at"
+msgstr "Создано Робом Марлброу в"
+
+#: cloudflare_waf_rules_wizard.php:46
+msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
+msgstr "Press Wizards - Дизайн, хостинг и обслуживание WordPress"
+
+#: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
+msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
+msgstr "Если этот плагин экономит ваше время, помогает вашим клиентам или помогает вам делать работу лучше, я буду признателен."
+
+#: cloudflare_waf_rules_wizard.php:62
+msgid "Select Domains to Reset WAF Custom Rules on:"
+msgstr "Выберите домены для сброса пользовательских правил WAF:"
+
+#: cloudflare_waf_rules_wizard.php:65
+msgid "Select All"
+msgstr "Выбрать все"
+
+#: cloudflare_waf_rules_wizard.php:76
+msgid "Create/Overwrite All WAF Rules"
+msgstr "Создать/Перезаписать все правила WAF"
+
+#: cloudflare_waf_rules_wizard.php:92
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+#: cloudflare_waf_rules_wizard.php:99
+msgid "Delete Settings"
+msgstr "Удалить настройки"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Based on"
+msgstr "Основано на"
+
+#: cloudflare_waf_rules_wizard.php:108
+msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
+msgstr "Превосходные правила Cloudflare WAF v3 от Троя Гленси"
+
+#: cloudflare_waf_rules_wizard.php:139
+msgid "Cloudflare WAF Rules Wizard settings have been deleted."
+msgstr "Настройки мастера правил Cloudflare WAF были удалены."
+
+#: cloudflare_waf_rules_wizard.php:145
+msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
+msgstr "Введите ваш API-ключ Cloudflare, адрес электронной почты и ID аккаунта."
+
+#: cloudflare_waf_rules_wizard.php:146
+msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
+msgstr "Когда вы сохраните настройки, будут получены все домены под ID аккаунта, и вы сможете выбрать те, в которых хотите создать пользовательские правила CF WAF."
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
+msgstr "Изучите правила WAF v3 от Троя - каждое правило подробно объяснено"
+
+#: cloudflare_waf_rules_wizard.php:147
+msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
+msgstr "Вы можете дополнительно настроить правила после их создания непосредственно в Cloudflare в разделе Безопасность > WAF > Пользовательские правила."
+
+#: cloudflare_waf_rules_wizard.php:148
+msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
+msgstr "ПРИМЕЧАНИЕ: Это сбрасывает все пользовательские правила WAF! Если для этого домена существуют другие пользовательские правила WAF, они будут удалены, и будут созданы 5 новых правил. ВАЖНО: Используйте на свой страх и риск!"
+
+#: cloudflare_waf_rules_wizard.php:149
+msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
+msgstr "Совет по безопасности: нажмите кнопку Удалить настройки после того, как закончите использовать этот плагин, чтобы удалить ваши учетные данные. Они не зашифрованы при хранении. Возможно, в будущих версиях они будут зашифрованы, опции будут удаляться при деактивации и т.д. Сейчас это быстрый и простой плагин для использования и последующего удаления."
+
+#: cloudflare_waf_rules_wizard.php:230
+msgid "Built-in User Agents:"
+msgstr "Встроенные User Agents:"
+
+#: cloudflare_waf_rules_wizard.php:236
+msgid "Custom User Agents:"
+msgstr "Пользовательские User Agents:"
+
+#: cloudflare_waf_rules_wizard.php:237
+msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
+msgstr "Введите один User Agent на строку. Допускаются только буквенно-цифровые символы, пробелы, подчеркивания и дефисы."
+
+#: cloudflare_waf_rules_wizard.php:238
+msgid "Enter one User Agent per line"
+msgstr "Введите один User Agent на строку"
+
+#: cloudflare_waf_rules_wizard.php:317
+msgid "Please enter all the required fields."
+msgstr "Пожалуйста, заполните все обязательные поля."
+
+#: cloudflare_waf_rules_wizard.php:421
+msgid "Failed to create ruleset for domain:"
+msgstr "Не удалось создать набор правил для домена:"
+
+#: cloudflare_waf_rules_wizard.php:428
+msgid "Successfully updated ruleset for domain:"
+msgstr "Набор правил для домена успешно обновлен:"
+
+#: cloudflare_waf_rules_wizard.php:430
+msgid "Unknown error"
+msgstr "Неизвестная ошибка"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Failed to update ruleset for domain:"
+msgstr "Не удалось обновить набор правил для домена:"
+
+#: cloudflare_waf_rules_wizard.php:431
+msgid "Error:"
+msgstr "Ошибка:"

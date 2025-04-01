@@ -5,7 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2025-04-01 01:20-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
-"Language: fr\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,88 +17,87 @@ msgstr ""
 
 #: cloudflare_waf_rules_wizard.php:29 cloudflare_waf_rules_wizard.php:45
 msgid "Cloudflare WAF Rules Wizard"
-msgstr "Assistant de règles WAF Cloudflare"
+msgstr "Cloudflare WAF Sääntöjen Velho"
 
 #: cloudflare_waf_rules_wizard.php:30
 msgid "CF Rules Wizard"
-msgstr "Assistant de règles CF"
+msgstr "CF Sääntöjen Velho"
 
 #: cloudflare_waf_rules_wizard.php:41
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas les autorisations suffisantes pour accéder à cette page."
+msgstr "Sinulla ei ole riittäviä oikeuksia päästäksesi tälle sivulle."
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Created by Rob Marlbrough at"
-msgstr "Créé par Rob Marlbrough chez"
+msgstr "Luonut Rob Marlbrough osoitteessa"
 
 #: cloudflare_waf_rules_wizard.php:46
 msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
-msgstr "Press Wizards - Conception, hébergement et maintenance WordPress"
+msgstr "Press Wizards - WordPress-suunnittelu, isännöinti ja ylläpito"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
 msgid ""
 "If this plugin saves you time, helps your clients, or helps you do better work, "
 "I'd appreciate it."
 msgstr ""
-"Si ce plugin vous fait gagner du temps, aide vos clients ou vous aide à faire un "
-"meilleur travail, je l'apprécierais."
+"Jos tämä lisäosa säästää aikaasi, auttaa asiakkaitasi tai auttaa sinua tekemään "
+"parempaa työtä, arvostaisin sitä."
 
 #: cloudflare_waf_rules_wizard.php:62
 msgid "Select Domains to Reset WAF Custom Rules on:"
-msgstr "Sélectionnez les domaines pour réinitialiser les règles WAF personnalisées :"
+msgstr "Valitse verkkotunnukset, joiden WAF-mukautetut säännöt nollataan:"
 
 #: cloudflare_waf_rules_wizard.php:65
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr "Valitse kaikki"
 
 #: cloudflare_waf_rules_wizard.php:76
 msgid "Create/Overwrite All WAF Rules"
-msgstr "Créer/Écraser toutes les règles WAF"
+msgstr "Luo/Kirjoita kaikki WAF-säännöt"
 
 #: cloudflare_waf_rules_wizard.php:92
 msgid "Save Settings"
-msgstr "Enregistrer les paramètres"
+msgstr "Tallenna asetukset"
 
 #: cloudflare_waf_rules_wizard.php:99
 msgid "Delete Settings"
-msgstr "Supprimer les paramètres"
+msgstr "Poista asetukset"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Based on"
-msgstr "Basé sur"
+msgstr "Perustuu"
 
 #: cloudflare_waf_rules_wizard.php:108
 msgid "Troy Glancy's superb Cloudflare WAF Rules v3"
-msgstr "Les superbes règles WAF Cloudflare v3 de Troy Glancy"
+msgstr "Troy Glancyn erinomaiseen Cloudflare WAF Säännöt v3"
 
 #: cloudflare_waf_rules_wizard.php:139
 msgid "Cloudflare WAF Rules Wizard settings have been deleted."
-msgstr "Les paramètres de l'assistant de règles WAF Cloudflare ont été supprimés."
+msgstr "Cloudflare WAF Sääntöjen Velhon asetukset on poistettu."
 
 #: cloudflare_waf_rules_wizard.php:145
 msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
-msgstr "Entrez votre clé API Cloudflare, votre adresse e-mail et l'ID de compte."
+msgstr "Syötä Cloudflare API-avaimesi, sähköpostiosoitteesi ja tilin tunnus."
 
 #: cloudflare_waf_rules_wizard.php:146
 msgid ""
 "When you Save the settings, it will get all the domains under the account ID, and "
 "you can select the ones you want CF WAF custom rules created in."
 msgstr ""
-"Lorsque vous enregistrez les paramètres, il récupérera tous les domaines sous l'ID "
-"de compte, et vous pourrez sélectionner ceux dans lesquels vous voulez que les "
-"règles WAF personnalisées CF soient créées."
+"Kun tallennat asetukset, se hakee kaikki tilin tunnuksen alaiset verkkotunnukset, "
+"ja voit valita ne, joihin haluat luoda CF WAF mukautetut säännöt."
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
-msgstr "Explorez les règles WAF v3 de Troy - chaque règle expliquée en détail"
+msgstr "Tutustu Troyn WAF Säännöt v3 - jokainen sääntö selitetty yksityiskohtaisesti"
 
 #: cloudflare_waf_rules_wizard.php:147
 msgid ""
 "You can further customize the rules after they are created directly in Cloudflare "
 "under Security > WAF > Custom rules."
 msgstr ""
-"Vous pouvez personnaliser davantage les règles après leur création directement "
-"dans Cloudflare sous Sécurité > WAF > Règles personnalisées."
+"Voit mukauttaa sääntöjä edelleen niiden luomisen jälkeen suoraan Cloudflaressa "
+"kohdassa Turvallisuus > WAF > Mukautetut säännöt."
 
 #: cloudflare_waf_rules_wizard.php:148
 msgid ""
@@ -106,9 +105,9 @@ msgid ""
 "domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own "
 "risk!"
 msgstr ""
-"REMARQUE : Cela réinitialise toutes les règles WAF personnalisées ! Si d'autres "
-"règles WAF personnalisées existent pour ce domaine, elles seront effacées, et 5 "
-"nouvelles règles seront créées. IMPORTANT : Utilisez à vos propres risques !"
+"HUOM: Tämä nollaa kaikki WAF-mukautetut säännöt! Jos kyseiselle verkkotunnukselle "
+"on olemassa muita WAF-mukautettuja sääntöjä, ne poistetaan ja luodaan 5 uutta "
+"sääntöä. TÄRKEÄÄ: Käytä omalla vastuullasi!"
 
 #: cloudflare_waf_rules_wizard.php:149
 msgid ""
@@ -117,52 +116,52 @@ msgid ""
 "future versions will encrypt, delete the options on deactivation, etc. Right now "
 "it is a quick and simple plugin for you to use and then remove."
 msgstr ""
-"Conseil de sécurité : Cliquez sur le bouton Supprimer les paramètres après avoir "
-"fini d'utiliser ce plugin pour supprimer vos identifiants. Ils ne sont pas cryptés "
-"lorsqu'ils sont stockés. Peut-être que les futures versions les chiffreront, "
-"supprimeront les options à la désactivation, etc. Pour l'instant, c'est un plugin "
-"rapide et simple à utiliser puis à supprimer."
+"Turvallisuusvinkki: Poista asetukset -painikkeen napsauttaminen tämän lisäosan "
+"käytön jälkeen poistaa tunnistetietosi. Ne eivät ole salattuja, kun ne "
+"tallennetaan. Ehkä tulevat versiot salaavat, poistavat asetukset deaktivoinnin "
+"yhteydessä jne. Tällä hetkellä se on nopea ja yksinkertainen lisäosa, jota voit "
+"käyttää ja sitten poistaa."
 
 #: cloudflare_waf_rules_wizard.php:230
 msgid "Built-in User Agents:"
-msgstr "Agents utilisateurs intégrés :"
+msgstr "Sisäänrakennetut käyttäjäagentit:"
 
 #: cloudflare_waf_rules_wizard.php:236
 msgid "Custom User Agents:"
-msgstr "Agents utilisateurs personnalisés :"
+msgstr "Mukautetut käyttäjäagentit:"
 
 #: cloudflare_waf_rules_wizard.php:237
 msgid ""
 "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, "
 "and hyphens are allowed."
 msgstr ""
-"Entrez un agent utilisateur par ligne. Seuls les caractères alphanumériques, les "
-"espaces, les underscores et les tirets sont autorisés."
+"Syötä yksi käyttäjäagentti per rivi. Vain aakkosnumeeriset merkit, välilyönnit, "
+"alaviivat ja yhdysmerkit ovat sallittuja."
 
 #: cloudflare_waf_rules_wizard.php:238
 msgid "Enter one User Agent per line"
-msgstr "Entrez un agent utilisateur par ligne"
+msgstr "Syötä yksi käyttäjäagentti per rivi"
 
 #: cloudflare_waf_rules_wizard.php:317
 msgid "Please enter all the required fields."
-msgstr "Veuillez entrer tous les champs requis."
+msgstr "Ole hyvä ja täytä kaikki vaaditut kentät."
 
 #: cloudflare_waf_rules_wizard.php:421
 msgid "Failed to create ruleset for domain:"
-msgstr "Échec de la création du jeu de règles pour le domaine :"
+msgstr "Sääntöjoukon luominen verkkotunnukselle epäonnistui:"
 
 #: cloudflare_waf_rules_wizard.php:428
 msgid "Successfully updated ruleset for domain:"
-msgstr "Jeu de règles mis à jour avec succès pour le domaine :"
+msgstr "Sääntöjoukko päivitettiin onnistuneesti verkkotunnukselle:"
 
 #: cloudflare_waf_rules_wizard.php:430
 msgid "Unknown error"
-msgstr "Erreur inconnue"
+msgstr "Tuntematon virhe"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Failed to update ruleset for domain:"
-msgstr "Échec de la mise à jour du jeu de règles pour le domaine :"
+msgstr "Sääntöjoukon päivittäminen verkkotunnukselle epäonnistui:"
 
 #: cloudflare_waf_rules_wizard.php:431
 msgid "Error:"
-msgstr "Erreur :"
+msgstr "Virhe:"
