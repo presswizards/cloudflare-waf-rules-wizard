@@ -15,6 +15,43 @@ Requires at least: 5.2
 Requires PHP:      7.4
 */
 
+if (defined('WP_INSTALLING') && WP_INSTALLING) return;
+if (!defined('ABSPATH')) exit; // Prevent direct access
+
+add_action('admin_init', function () {
+    // Ensure user has permission
+    if (!is_admin() || !current_user_can('update_plugins')) {
+        return;
+    }
+
+    $updater_path = plugin_dir_path(__FILE__) . 'updater.php';
+
+    // Check if updater file exists and include it
+    if (file_exists($updater_path)) {
+        include_once $updater_path;
+    } else {
+        return;
+    }
+
+    // Ensure class exists before instantiating
+    if (class_exists('WP_GitHub_Updater')) {
+        $config = [
+            'slug' => plugin_basename(__FILE__),
+            'proper_folder_name' => 'cloudflare-waf-rules-wizard',
+            'api_url' => 'https://api.github.com/repos/presswizards/cloudflare-waf-rules-wizard',
+            'raw_url' => 'https://raw.github.com/presswizards/cloudflare-waf-rules-wizard/main',
+            'github_url' => 'https://github.com/presswizards/cloudflare-waf-rules-wizard',
+            'zip_url' => 'https://github.com/presswizards/cloudflare-waf-rules-wizard/zipball/main',
+            'sslverify' => true,
+            'requires' => '5.2',
+            'tested' => '6.7.2',
+            'readme' => 'README.md',
+            'access_token' => '',
+        ];
+        new WP_GitHub_Updater($config);
+    }
+});
+
 // Load plugin text domain for translations
 add_action('plugins_loaded', 'pw_load_textdomain');
 function pw_load_textdomain() {
@@ -479,4 +516,3 @@ function pw_cloudflare_ruleset_manager_process_zones() {
         }
     }
 }
-?>
