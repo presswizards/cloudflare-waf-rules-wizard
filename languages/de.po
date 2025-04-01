@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cloudflare WAF Wizard\n"
 "POT-Creation-Date: 2025-03-31 12:01-0700\n"
-"PO-Revision-Date: 2025-03-31 12:08-0700\n"
+"PO-Revision-Date: 2025-04-01 00:54-0700\n"
 "Last-Translator: \n"
 "Language-Team: Rob Press Wizards https://presswizards.com/\n"
 "Language: de\n"
@@ -36,9 +36,7 @@ msgid "Press Wizards - WordPress Design, Hosting, and Maintenance"
 msgstr "Press Wizards - WordPress Design, Hosting und Wartung"
 
 #: cloudflare_waf_rules_wizard.php:50 cloudflare_waf_rules_wizard.php:104
-msgid ""
-"If this plugin saves you time, helps your clients, or helps you do better "
-"work, I'd appreciate it."
+msgid "If this plugin saves you time, helps your clients, or helps you do better work, I'd appreciate it."
 msgstr "Wenn dieses Plugin Ihnen Zeit spart, Ihren Kunden hilft oder Ihre Arbeit verbessert, würde ich mich freuen."
 
 #: cloudflare_waf_rules_wizard.php:62
@@ -78,9 +76,7 @@ msgid "Enter your Cloudflare API Key and Email address, and the Account ID."
 msgstr "Geben Sie Ihren Cloudflare API-Schlüssel und Ihre E-Mail-Adresse sowie die Konto-ID ein."
 
 #: cloudflare_waf_rules_wizard.php:146
-msgid ""
-"When you Save the settings, it will get all the domains under the account "
-"ID, and you can select the ones you want CF WAF custom rules created in."
+msgid "When you Save the settings, it will get all the domains under the account ID, and you can select the ones you want CF WAF custom rules created in."
 msgstr "Wenn Sie die Einstellungen speichern, werden alle Domains unter der Konto-ID abgerufen, und Sie können die auswählen, in denen CF WAF-Benutzerdefinierte Regeln erstellt werden sollen."
 
 #: cloudflare_waf_rules_wizard.php:147
@@ -88,24 +84,15 @@ msgid "Dig into Troy's WAF Rules v3 - each rule explained in detail"
 msgstr "Tauchen Sie in Troys WAF-Regeln v3 ein - jede Regel wird im Detail erklärt"
 
 #: cloudflare_waf_rules_wizard.php:147
-msgid ""
-"You can further customize the rules after they are created directly in "
-"Cloudflare under Security > WAF > Custom rules."
+msgid "You can further customize the rules after they are created directly in Cloudflare under Security > WAF > Custom rules."
 msgstr "Sie können die Regeln weiter anpassen, nachdem sie direkt in Cloudflare unter Sicherheit > WAF > Benutzerdefinierte Regeln erstellt wurden."
 
 #: cloudflare_waf_rules_wizard.php:148
-msgid ""
-"NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist "
-"for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use "
-"at your own risk!"
+msgid "NOTE: It resets all WAF custom rules! If any other WAF Custom Rules exist for that domain, it will erase them, and create 5 new rules. IMPORTANT: Use at your own risk!"
 msgstr "HINWEIS: Es setzt alle WAF-Benutzerdefinierten Regeln zurück! Wenn andere WAF-Benutzerdefinierte Regeln für diese Domain existieren, werden sie gelöscht und 5 neue Regeln erstellt. WICHTIG: Nutzung auf eigene Gefahr!"
 
 #: cloudflare_waf_rules_wizard.php:149
-msgid ""
-"Security Tip: Click the Delete Settings button after you are done using this "
-"plugin to remove your credentials. They are not encrypted when stored. Maybe "
-"future versions will encrypt, delete the options on deactivation, etc. Right "
-"now it is a quick and simple plugin for you to use and then remove."
+msgid "Security Tip: Click the Delete Settings button after you are done using this plugin to remove your credentials. They are not encrypted when stored. Maybe future versions will encrypt, delete the options on deactivation, etc. Right now it is a quick and simple plugin for you to use and then remove."
 msgstr "Sicherheitstipp: Klicken Sie auf die Schaltfläche Einstellungen löschen, nachdem Sie dieses Plugin verwendet haben, um Ihre Anmeldedaten zu entfernen. Sie werden nicht verschlüsselt gespeichert. Vielleicht werden zukünftige Versionen sie verschlüsseln, die Optionen bei Deaktivierung löschen usw. Im Moment ist es ein schnelles und einfaches Plugin, das Sie verwenden und dann entfernen können."
 
 #: cloudflare_waf_rules_wizard.php:230
@@ -117,9 +104,7 @@ msgid "Custom User Agents:"
 msgstr "Benutzerdefinierte User Agents:"
 
 #: cloudflare_waf_rules_wizard.php:237
-msgid ""
-"Enter one User Agent per line. Only alphanumeric characters, spaces, "
-"underscores, and hyphens are allowed."
+msgid "Enter one User Agent per line. Only alphanumeric characters, spaces, underscores, and hyphens are allowed."
 msgstr "Geben Sie einen User Agent pro Zeile ein. Es sind nur alphanumerische Zeichen, Leerzeichen, Unterstriche und Bindestriche erlaubt."
 
 #: cloudflare_waf_rules_wizard.php:238
