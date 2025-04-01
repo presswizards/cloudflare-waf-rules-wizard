@@ -153,7 +153,7 @@ function pw_cloudflare_ruleset_manager_section_text() {
 
 function pw_cloudflare_ruleset_manager_field_api_key() {
     $apiKey = get_option('pw_cloudflare_api_key');
-    echo "<input type='text' name='pw_cloudflare_api_key' value='$apiKey' />";
+    echo "<input type='password' name='pw_cloudflare_api_key' value='$apiKey' />";
 }
 
 function pw_cloudflare_ruleset_manager_field_api_email() {
@@ -163,7 +163,7 @@ function pw_cloudflare_ruleset_manager_field_api_email() {
 
 function pw_cloudflare_ruleset_manager_field_account_id() {
     $accountId = get_option('pw_cloudflare_account_id');
-    echo "<input type='text' name='pw_cloudflare_account_id' value='$accountId' />";
+    echo "<input type='password' name='pw_cloudflare_account_id' value='$accountId' />";
 }
 
 function pw_cloudflare_ruleset_manager_field_user_agents() {
