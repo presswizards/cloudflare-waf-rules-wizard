@@ -11,6 +11,33 @@ This plugin can be installed on any WordPress site you own, and then use it to b
 
 It takes your Cloudflare API key, email, and account ID, and then gets all the domains in that account, and displays a checkbox list of them all, and you can choose the domains you want to add Troy’s WAF rules to, and bulk update all the domains with one click. Please see the notes and security tips in the plugin settings page.
 
+## Added translations for the following languages:
+
+Languages:
+	•	English → en.po
+	•	Spanish → es.po
+	•	German → de.po
+	•	French → fr.po
+	•	Italian → it.po
+	•	Portuguese → pt.po
+	•	Dutch → nl.po
+	•	Russian → ru.po
+	•	Chinese (Simplified) → zh_CN.po
+	•	Japanese → ja.po
+	•	Korean → ko.po
+	•	Arabic → ar.po
+	•	Turkish → tr.po
+	•	Hindi → hi.po
+	•	Polish → pl.po
+	•	Swedish → sv.po
+	•	Danish → da.po
+	•	Finnish → fi.po
+	•	Greek → el.po
+	•	Czech → cs.po
+	•	Hungarian → hu.po
+	•	Thai → th.po
+	•	Hebrew → he.po
+
 ## Some Important Notes
 ⚠️ **Please note that this plugin overwites the 5 WAF rules on all domains, it will erase the existing rules and create new ones.** These 5 rules should work with Cloudflare Free, Pro and Business plans. They do not work for Enterprise Cloudflare, which most likely your web hosting provider controls directly.
 
