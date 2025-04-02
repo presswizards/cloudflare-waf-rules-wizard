@@ -66,7 +66,6 @@ function cloudflare_waf_rules_wizard_plugin_info( $res, $action, $args ){
                 return $res;
         }
 global $cfwafversion;
-global $cfwaflastmod;
 
 $remote = '{
         "name" : "Cloudflare WAF Rules Wizard",
