@@ -9,6 +9,7 @@ If this plugin saves you time, helps your clients, or helps you do better work, 
 ## Download The Install Version Here
 
 Use this link to download the initial install version of the plugin, it has the correct folder name which is used for future updates direct from GitHub:
+
 https://github.com/presswizards/cloudflare-waf-rules-wizard/releases/download/InstallRelease/cloudflare-waf-rules-wizard.zip
 
 ## Summary
