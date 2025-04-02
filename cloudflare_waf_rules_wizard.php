@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:    Cloudflare WAF Rules Wizard
-Description:    A simple plugin to create Cloudflare WAF custom rules based on account ID (based on Troy Glancy's superb CF WAF v3 rules)
+Description:    A simple plugin to create Cloudflare WAF custom rules based on account ID. Based on Troy Glancy's superb CF WAF v3 rules.
 Version:        2.3
 Plugin URI:     https://github.com/presswizards/cloudflare-waf-rules-wizard/
 Text Domain:    cloudflare-waf-rules-wizard
@@ -26,7 +26,7 @@ add_action('admin_init', function () {
 
     $updater_path = plugin_dir_path(__FILE__) . 'updater.php';
 
-    // Check if updater file exists and include it
+    // Check if updater file exists and include itcloudflare-waf-rules-wizardcloudflare-waf-rules-wizard
     if (file_exists($updater_path)) {
         include_once $updater_path;
     } else {
@@ -51,6 +51,82 @@ add_action('admin_init', function () {
         new WP_GitHub_Updater($config);
     }
 });
+
+add_filter( 'plugins_api', 'cloudflare_waf_rules_wizard_plugin_info', 20, 3);
+function cloudflare_waf_rules_wizard_plugin_info( $res, $action, $args ){
+
+
+        // do nothing if this is not about getting plugin information
+        if( 'plugin_information' !== $action ) {
+                return $res;
+        }
+
+        // do nothing if it is not our plugin
+        if( plugin_basename( __DIR__ ) !== $args->slug ) {
+                return $res;
+        }
+global $cfwafversion;
+global $cfwaflastmod;
+
+$remote = '{
+        "name" : "Cloudflare WAF Rules Wizard",
+        "slug" : "cloudflare-waf-rules-wizard",
+        "author" : "<a href=https://presswizards.com>Press Wizards</a>",
+        "author_profile" : "https://profiles.wordpress.org/presswizards",
+        "donate_link" : "https://buymeacoffee.com/robwpdev",
+        "version" : "2.3",
+        "download_url" : "https://github.com/presswizards/cloudflare-waf-rules-wizard/zipball/main",
+        "requires" : "5.2",
+        "tested" : "6.7.2",
+        "requires_php" : "5.6",
+        "added" : "2024-06-04 02:10:00",
+        "last_updated" : "2025-03-25 10:07:00",
+        "homepage" : "https://github.com//presswizards/cloudflare-waf-rules-wizard",
+        "sections" : {
+                "description" : "A simple plugin to create Cloudflare WAF custom rules using your Cloudflare API key. This plugin is based on the amazing work by Troy Glancy and his superb Cloudflare WAF Rules.",
+                "installation" : "Click the activate button and go to the options page.",
+                "changelog" : "<h4>For the latest changes, visit the <a target=_blank href=https://github.com/presswizards/cloudflare-waf-rules-wizard>GitHub page</a></h4><h4>v2.3</h4><ul><li>Improvement: Added translation support via .po files</li><li>Improvement: API and Account ID fields use password display</li><li>Improvement: added github update mechanism</li></ul><h4>v2.1</h4><ul><li>Added language translation support, with a bunch of languages included.</li></ul><h4>v2.0</h4><ul><li>Added easy user agent allowlist via checkboxes.</li></ul>"
+        },
+        "banners" : {
+                "low" : "https://presswizards.com/wp-content/uploads/2025/04/cfwafwizard-772.webp",
+                "high" : "https://presswizards.com/wp-content/uploads/2025/04/cfwafwizard.webp"
+        }
+}';
+
+$remote = json_decode($remote);
+
+$res = new stdClass();
+        $res->name = $remote->name;
+        $res->slug = $remote->slug;
+        $res->author = $remote->author;
+        $res->author_profile = $remote->author_profile;
+        $res->version = $cfwafversion;
+        $res->tested = $remote->tested;
+        $res->requires = $remote->requires;
+        $res->requires_php = $remote->requires_php;
+        $res->download_link = $remote->download_url;
+        $res->trunk = $remote->download_url;
+        $res->last_updated = date('Y-m-d H:i:s', strtotime('-1 day'));
+        $res->sections = array(
+                'description' => $remote->sections->description,
+                'installation' => $remote->sections->installation,
+                'changelog' => $remote->sections->changelog
+                // you can add your custom sections (tabs) here
+        );
+        // in case you want the screenshots tab, use the following HTML format for its content:
+        // <ol><li><a href="IMG_URL" target="_blank"><img src="IMG_URL" alt="CAPTION" /></a><p>CAPTION</p></li></ol>
+        if( ! empty( $remote->sections->screenshots ) ) {
+                $res->sections[ 'screenshots' ] = $remote->sections->screenshots;
+        }
+
+        $res->banners = array(
+                'low' => $remote->banners->low,
+                'high' => $remote->banners->high
+        );
+
+        return $res;
+
+}
 
 // Load plugin text domain for translations
 add_action('plugins_loaded', 'pw_load_textdomain');
