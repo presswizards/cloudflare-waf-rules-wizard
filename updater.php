@@ -252,7 +252,9 @@ class WP_GitHub_Updater {
 			if ( false !== $version )
 				set_site_transient( md5($this->config['slug']).'_new_version', $version, 60*60*6 );
 		}
-
+		global $cfwafversion;
+		$cfwafversion = $version;
+		
 		return $version;
 	}
 
