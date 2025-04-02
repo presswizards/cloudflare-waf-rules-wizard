@@ -6,6 +6,11 @@ A simple plugin to create Cloudflare WAF custom rules using your Cloudflare API 
 If this plugin saves you time, helps your clients, or helps you do better work, I’d appreciate it.
 </p>
 
+## Download The Install Version Here
+
+Use this link to download the initial install version of the plugin, it has the correct folder name which is used for future updates direct from GitHub:
+https://github.com/presswizards/cloudflare-waf-rules-wizard/releases/download/InstallRelease/cloudflare-waf-rules-wizard.zip
+
 ## Summary
 This plugin can be installed on any WordPress site you own, and then use it to bulk create the rules to as many domains in your Cloudflare account, including delegated member accounts you have access to.
 
