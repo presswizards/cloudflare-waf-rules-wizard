@@ -18,6 +18,132 @@ Requires PHP:      7.4
 if (defined('WP_INSTALLING') && WP_INSTALLING) return;
 if (!defined('ABSPATH')) exit; // Prevent direct access
 
+// Function to rename plugin folder and update active plugins
+function rename_plugin_folder() {
+    $plugin_slug = 'cloudflare-waf-rules-wizard'; // Correct folder name
+    $plugin_file = 'cloudflare-waf-rules-wizard/cloudflare-waf-rules-wizard.php'; // Path to plugin's main file
+    $plugin_dir = WP_PLUGIN_DIR;
+
+    // Check if the plugin folder is incorrectly named
+    $plugin_files = glob($plugin_dir . '/cloudflare-waf-rules-wizard-*');
+    
+    if (count($plugin_files) === 1) {
+        $current_folder = $plugin_files[0];
+        
+        // If the folder is not the correct name, rename it
+        if (basename($current_folder) !== $plugin_slug) {
+            $new_folder = $plugin_dir . '/' . $plugin_slug;
+            
+            // Get the current active plugins
+            $active_plugins = get_option('active_plugins');
+            
+            // Loop through active plugins and update the folder name
+            foreach ($active_plugins as &$active_plugin) {
+                if (strpos($active_plugin, basename($current_folder)) !== false) {
+                    $active_plugin = str_replace(basename($current_folder), basename($new_folder), $active_plugin);
+                }
+            }
+            
+            // Update the serialized active plugins option
+            update_option('active_plugins', $active_plugins);
+
+            rename($current_folder, $new_folder);
+
+        }
+    }
+}
+
+// Display admin notice with a button to trigger renaming
+function show_admin_notice_for_rename() {
+    $plugin_slug = 'cloudflare-waf-rules-wizard'; // Correct folder name
+    $plugin_file = 'cloudflare-waf-rules-wizard/cloudflare-waf-rules-wizard.php'; // Path to plugin's main file
+    $plugin_dir = WP_PLUGIN_DIR;
+
+    // Check if the plugin folder is incorrectly named
+    $plugin_files = glob($plugin_dir . '/cloudflare-waf-rules-wizard-*');
+    
+    if (count($plugin_files) === 1) {
+        $current_folder = $plugin_files[0];
+        
+        // If the folder is not the correct name, show the admin notice
+        if (basename($current_folder) !== $plugin_slug) {
+            ?>
+            <div class="notice notice-warning is-dismissible">
+                <p><strong>The Cloudflare WAF Wizard plugin folder name needs to be fixed to update from GitHub correctly in the future.</strong> 
+                <button id="rename-plugin-folder" class="button-primary">Fix Folder Name</button></p>
+            </div>
+            <script type="text/javascript">
+                document.getElementById('rename-plugin-folder').addEventListener('click', function() {
+                    var data = {
+                        action: 'rename_plugin_folder'
+                    };
+                    
+                    jQuery.post(ajaxurl, data, function(response) {
+//                        alert('Folder name has been fixed.');
+                        location.reload();
+                    });
+                });
+            </script>
+            <?php
+        }
+    }
+}
+
+// Register the admin notice to show on plugin page
+add_action('admin_notices', 'show_admin_notice_for_rename');
+
+// Handle the Ajax request to rename the plugin folder
+function handle_plugin_folder_rename() {
+    if (isset($_POST['action']) && $_POST['action'] === 'rename_plugin_folder') {
+        rename_plugin_folder();
+        wp_die(); // Terminate the request
+    }
+}
+add_action('wp_ajax_rename_plugin_folder', 'handle_plugin_folder_rename');
+
+function rename_plugin_folder_after_upload($upgrader_object, $options) {
+    if ('install' !== $options['action']) {
+        return;
+    }
+
+    $plugin_slug = 'cloudflare-waf-rules-wizard'; // Correct folder name
+    $plugin_dir = WP_PLUGIN_DIR;
+
+    // Check if there's a folder with the incorrect name (i.e., cloudflare-waf-rules-wizard-*).
+    $plugin_files = glob($plugin_dir . '/cloudflare-waf-rules-wizard-*');
+
+    if (count($plugin_files) === 1) {
+        $current_folder = $plugin_files[0];
+
+        // If the folder doesn't already have the correct name, rename it.
+        if (basename($current_folder) !== $plugin_slug) {
+            $new_folder = $plugin_dir . '/' . $plugin_slug;
+            rename($current_folder, $new_folder);
+        }
+    }
+}
+add_action('upgrader_process_complete', 'rename_plugin_folder_after_upload', 10, 2);
+
+function rename_plugin_folder_before_activation() {
+    $plugin_slug = 'cloudflare-waf-rules-wizard'; // Correct folder name
+    $plugin_dir = WP_PLUGIN_DIR . '/' . $plugin_slug;
+
+    // Check if the folder doesn't already exist with the correct name
+    $plugin_files = glob(WP_PLUGIN_DIR . '/cloudflare-waf-rules-wizard-*');
+    
+    if (count($plugin_files) === 1) {
+        $current_folder = $plugin_files[0];
+        
+        if (basename($current_folder) !== $plugin_slug) {
+            // Rename the folder to the correct name
+            $new_folder = WP_PLUGIN_DIR . '/' . $plugin_slug;
+            rename($current_folder, $new_folder);
+        }
+    }
+}
+
+add_action('upgrader_pre_install', 'rename_plugin_folder_before_activation');
+
 add_action('admin_init', function () {
     // Ensure user has permission
     if (!is_admin() || !current_user_can('update_plugins')) {
