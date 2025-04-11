@@ -4,4 +4,5 @@
 <a target="_blank" href="https://5starplugins.com/coming-soon-cloudflare-waf-rules-wizard/">New Cloudflare WAF Rules Wizard Plugin Coming Soon</a><br>
 for news on the refactoring and improved version of this plugin.</h2>
 
-## Thanks, Rob
+<h2>Thanks,<br>
+Rob</h2>
