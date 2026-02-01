@@ -1,8 +1,8 @@
-# Cloudflare WAF Rules Wizard
+# WAF Security Suite for Cloudflare - the new secure encrypted API key version!
 
-<h2>Please click here:<br>
-👉 <a target="_blank" href="https://5starplugins.com/coming-soon-cloudflare-waf-rules-wizard/">New Cloudflare WAF Rules Wizard Plugin Coming Soon</a><br>
-for news on the refactoring and improved version of this plugin.</h2>
+It's released! 🎉 <a target="_blank" href="https://wordpress.org/plugins/waf-security-suite-for-cloudflare/">https://wordpress.org/plugins/waf-security-suite-for-cloudflare/</a>
+
+Sorry it took so long...
 
 <h2>Thanks,<br>
 Rob</h2>
